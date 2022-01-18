@@ -23,7 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - test issue
 
-## [v1.0.0] - 2022-01-18
+## [v0.0.1] - 2022-01-18
 
 ### Added
 - Initial build
