@@ -9,7 +9,6 @@ use Grafite\Html\HtmlAssets;
 
 class HtmlComponent
 {
-    public static $name;
     public static $id;
     public static $css;
     public static $url;

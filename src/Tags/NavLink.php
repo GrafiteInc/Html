@@ -6,16 +6,6 @@ use Grafite\Html\Tags\HtmlComponent;
 
 class NavLink extends HtmlComponent
 {
-    public static $url;
-    public static $css = 'nav-link';
-
-    public static function url($url)
-    {
-        self::$url = $url;
-
-        return new static;
-    }
-
     public static function process()
     {
         $text = self::$text;

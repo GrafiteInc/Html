@@ -6,8 +6,6 @@ use Grafite\Html\Tags\HtmlComponent;
 
 class NavButton extends HtmlComponent
 {
-    public static $css = 'nav-link';
-
     public static function process()
     {
         $class = '';

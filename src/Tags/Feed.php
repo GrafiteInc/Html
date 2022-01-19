@@ -8,6 +8,13 @@ class Feed extends HtmlComponent
 {
     public static $borderColor;
 
+    public static function borderColor($value)
+    {
+        self::$borderColor = $value;
+
+        return new static;
+    }
+
     public static function process()
     {
         $content = collect(self::$items)->implode("\n");
