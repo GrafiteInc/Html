@@ -15,6 +15,7 @@ class HtmlComponent
     public static $text;
     public static $html;
     public static $onClick;
+    public static $menuCss;
     public static $items = [];
     public static $attributes = [];
 
@@ -51,6 +52,13 @@ class HtmlComponent
     public static function css($css)
     {
         self::$css = $css;
+
+        return new static;
+    }
+
+    public static function menuCss($css)
+    {
+        self::$menuCss = $css;
 
         return new static;
     }

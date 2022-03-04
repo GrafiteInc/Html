@@ -11,6 +11,7 @@ class DropdownButtonAction extends HtmlComponent
     {
         $id = self::$id ?? 'html_'.Str::uuid();
         $css = self::$css;
+        $menuCss = self::$menuCss;
         $text = self::$text;
         $items = collect(self::$items)->implode("\n");
 
@@ -20,7 +21,7 @@ class DropdownButtonAction extends HtmlComponent
                 <button type="button" class="btn $css dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="$id">
+                <div class="dropdown-menu $menuCss" aria-labelledby="$id">
                     $items
                 </div>
             </div>
