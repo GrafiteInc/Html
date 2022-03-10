@@ -27,7 +27,7 @@ html;
 
         foreach ($links as $title => $link) {
             if (request()->url() === $link) {
-                $active = 'active';
+                $active = ' active';
             }
 
             $steps .= "<li class=\"breadcrumb-item${active}\"><a href=\"{$link}\">{$title}</a></li>\n";
