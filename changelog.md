@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.2.0] - 2022-03-30
+
+### Added
+- OffCanvas component
+
 ## [v1.1.1] - 2022-03-10
 
 ### Fixed
