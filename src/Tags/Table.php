@@ -48,8 +48,7 @@ class Table extends HtmlComponent
         $keys = self::$keys;
         $sortable = self::$sortable;
         $headers = self::$headers;
-
-        $class = 'table';
+        $class = self::$css ?? 'table';
 
         // Handles Eloquent Models
         if ($collection->first() instanceof Model) {

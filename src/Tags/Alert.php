@@ -24,9 +24,9 @@ class Alert extends HtmlComponent
         return new static;
     }
 
-    public static function dismiss()
+    public static function dismiss($state = true)
     {
-        self::$dismiss = true;
+        self::$dismiss = $state;
 
         return new static;
     }

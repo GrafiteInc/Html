@@ -4,6 +4,7 @@ namespace Grafite\Html;
 
 use Grafite\Html\HtmlAssets;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 class HtmlProvider extends ServiceProvider
 {
@@ -28,6 +29,19 @@ class HtmlProvider extends ServiceProvider
 
         $this->app['blade.compiler']->directive('htmlStyles', function () {
             return "<?php echo app('" . HtmlAssets::class . "')->render('styles'); ?>";
+        });
+
+        $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
+            foreach ([
+                'alert' => Components\Alert::class,
+                // 'avatar' => Components\Avatar::class,
+                // 'breadcrumbs' => Components\Breadcrumbs::class,
+                // 'card' => Components\Card::class,
+                // 'dropdown-button' => Components\DropdownButton::class,
+                'table' => Components\Table::class,
+            ] as $alias => $component) {
+                $blade->component($component, $alias, 'html');
+            }
         });
     }
 
