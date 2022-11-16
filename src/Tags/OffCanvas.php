@@ -27,7 +27,7 @@ class OffCanvas extends HtmlComponent
             <div id="offCanvas_{$id}" class="offcanvas offcanvas-{$position}" ref="offcanvas-panel" tabindex="-1" aria-labelledby="offcanvasLabel_{$id}">
                 <div class="offcanvas-header">
                     <h5 id="offcanvasLabel_{$id}">{$text}</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close bg-secondary text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     {{ \$slot }}
