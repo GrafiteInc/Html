@@ -2,34 +2,27 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Tags\Alert as AlertTag;
+use Grafite\Html\Tags\Avatar as AvatarTag;
 use Grafite\Html\Components\HtmlComponent;
 
-class Alert extends HtmlComponent
+class Avatar extends HtmlComponent
 {
-    public $background = 'info';
-    public $heading;
-    public $dismiss;
+    public $image;
+    public $css;
 
     public function __construct(
-        $text = null,
-        $background = 'info',
-        $heading = null,
-        $dismiss = false
+        $image,
+        $css = null
     ) {
-        $this->text = $text;
-        $this->background = $background;
-        $this->heading = $heading;
-        $this->dismiss = $dismiss;
+        $this->image = $image;
+        $this->css = $css;
     }
 
     public function render()
     {
-        return AlertTag::make()
-            ->text($this->text)
-            ->background($this->background)
-            ->heading($this->heading)
-            ->dismiss($this->dismiss)
+        return AvatarTag::make()
+            ->image($this->image)
+            ->css($this->css)
             ->render();
     }
 }
