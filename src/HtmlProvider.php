@@ -33,11 +33,14 @@ class HtmlProvider extends ServiceProvider
 
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
             foreach ([
+                'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
-                // 'avatar' => Components\Avatar::class,
-                // 'breadcrumbs' => Components\Breadcrumbs::class,
-                // 'card' => Components\Card::class,
-                // 'dropdown-button' => Components\DropdownButton::class,
+                'breadcrumbs' => Components\Breadcrumbs::class,
+                'action-dropdown' => Components\ActionDropdown::class,
+                'dropdown-item' => Components\DropdownItem::class,
+                'dropdown-divider' => Components\DropdownDivider::class,
+                'dropdown-item-button' => Components\DropdownItemButton::class,
+                'offcanvas' => Components\Offcanvas::class,
                 'table' => Components\Table::class,
             ] as $alias => $component) {
                 $blade->component($component, $alias, 'html');
