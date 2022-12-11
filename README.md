@@ -14,14 +14,14 @@ The HTML package lets you generate forms as well as fields with standard make co
 
 ## Requirements
 
-1. PHP 7.3+|8.0+
+1. PHP 7.3+|8.1+
 2. OpenSSL
 
 ## Compatibility and Support
 
 | Laravel Version | Package Tag | Supported |
 |-----------------|-------------|-----------|
-| ^7.x - ^8.x | 1.x | yes |
+| ^7.x - ^9.x | 1.x | yes |
 
 ### Installation
 
