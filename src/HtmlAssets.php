@@ -122,9 +122,9 @@ class HtmlAssets
                 $js = $minifierJS->add($js)->minify();
             }
 
-            $function = "let HtmlJS = () => { {$js} }";
+            $function = "window.HtmlJS = () => { {$js} }";
 
-            $output .= "<script>\n{$function}\nHtmlJS();\n</script>\n";
+            $output .= "<script>\n{$function}\nwindow.HtmlJS();\n</script>\n";
         }
 
         return $output;
