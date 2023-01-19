@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.3.1] - 2023-01-19
+
+### Fixed
+- Small issue with access to main method
+
 ## [v1.3.0] - 2022-11-17
 
 ### Added
