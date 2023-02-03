@@ -86,13 +86,6 @@ class HtmlComponent
         return new static;
     }
 
-    public static function view($view)
-    {
-        self::$view = $view;
-
-        return new static;
-    }
-
     public static function attributes($attributes)
     {
         self::$attributes = $attributes;
