@@ -42,6 +42,7 @@ class HtmlProvider extends ServiceProvider
                 'dropdown-item-button' => Components\DropdownItemButton::class,
                 'offcanvas' => Components\Offcanvas::class,
                 'table' => Components\Table::class,
+                'tag' => Components\Tag::class,
             ] as $alias => $component) {
                 $blade->component($component, $alias, 'html');
             }
