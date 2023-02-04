@@ -18,6 +18,7 @@ class HtmlComponent
     public static $menuCss;
     public static $items = [];
     public static $attributes = [];
+    public static $data = [];
 
     public static function make()
     {
@@ -89,6 +90,13 @@ class HtmlComponent
     public static function attributes($attributes)
     {
         self::$attributes = $attributes;
+
+        return new static;
+    }
+
+    public static function data($data)
+    {
+        self::$data = $data;
 
         return new static;
     }

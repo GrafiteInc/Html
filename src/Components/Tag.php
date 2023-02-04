@@ -8,13 +8,16 @@ class Tag extends HtmlComponent
 {
     public $component;
 
-    public function __construct($component = null)
+    public $data;
+
+    public function __construct($component = null, $data = [])
     {
         $this->component = $component;
+        $this->data = $data;
     }
 
     public function render()
     {
-        return $this->component::make()->render();
+        return $this->component::make()->data($this->data)->render();
     }
 }
