@@ -21,7 +21,7 @@ The HTML package lets you generate forms as well as fields with standard make co
 
 | Laravel Version | Package Tag | Supported |
 |-----------------|-------------|-----------|
-| ^7.x - ^9.x | 1.x | yes |
+| ^7.x - ^10.x | 1.x | yes |
 
 ### Installation
 
