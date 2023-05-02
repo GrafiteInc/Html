@@ -31,6 +31,36 @@ class HtmlProvider extends ServiceProvider
             return "<?php echo app('" . HtmlAssets::class . "')->render('styles'); ?>";
         });
 
+        $this->app['blade.compiler']->directive('when', function ($expression) {
+            $params = explode(',', $expression);
+
+            if (count($params) !== 2) {
+                throw new Exception("Must have 2 parameters in @when.", 1);
+            }
+
+            return "<?php echo ($params[0]) ? $params[1] : ''; ?>";
+        });
+
+        $this->app['blade.compiler']->directive('title', function ($expression) {
+            return "<?php echo \Illuminate\Support\Str::of($expression)->replace('_', ' ')->title(); ?>";
+        });
+
+        $this->app['blade.compiler']->directive('headline', function ($expression) {
+            return "<?php echo \Illuminate\Support\Str::of($expression)->replace('_', ' ')->headline(); ?>";
+        });
+
+        $this->app['blade.compiler']->directive('limit', function ($expression) {
+            return "<?php echo \Illuminate\Support\Str::of($expression)->replace('_', ' ')->limit(40); ?>";
+        });
+
+        $this->app['blade.compiler']->directive('plural', function ($expression) {
+            return "<?php echo \Illuminate\Support\Str::of($expression)->replace('_', ' ')->plural(); ?>";
+        });
+
+        $this->app['blade.compiler']->directive('singular', function ($expression) {
+            return "<?php echo \Illuminate\Support\Str::of($expression)->replace('_', ' ')->singular(); ?>";
+        });
+
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
             foreach ([
                 'avatar' => Components\Avatar::class,
