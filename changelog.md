@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.6.0] - 2023-05-02
+
+### Added
+- More components
+- Make component command
+- Accordion
+
 ## [v1.5.0] - 2023-03-02
 
 ### Added
