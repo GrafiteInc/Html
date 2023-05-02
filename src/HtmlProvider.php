@@ -5,6 +5,7 @@ namespace Grafite\Html;
 use Grafite\Html\HtmlAssets;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
+use Grafite\Html\Commands\MakeGlobalComponentCommand;
 
 class HtmlProvider extends ServiceProvider
 {
@@ -66,17 +67,33 @@ class HtmlProvider extends ServiceProvider
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
                 'breadcrumbs' => Components\Breadcrumbs::class,
+                'card' => Components\Card::class,
                 'action-dropdown' => Components\ActionDropdown::class,
                 'dropdown-item' => Components\DropdownItem::class,
                 'dropdown-divider' => Components\DropdownDivider::class,
                 'dropdown-item-button' => Components\DropdownItemButton::class,
                 'offcanvas' => Components\Offcanvas::class,
                 'table' => Components\Table::class,
+                'feed' => Components\Feed::class,
+                'feed-item' => Components\FeedItem::class,
+                'list-group' => Components\ListGroup::class,
+                'list-group-item' => Components\ListGroupItem::class,
+                'spinner' => Components\Spinner::class,
+                'progress' => Components\Progress::class,
+                'nav' => Components\Nav::class,
+                'nav-link' => Components\NavLink::class,
+                'nav-button' => Components\NavButton::class,
+                'carousel' => Components\Carousel::class,
+                'modal' => Components\Modal::class,
                 'tag' => Components\Tag::class,
             ] as $alias => $component) {
                 $blade->component($component, $alias, 'html');
             }
         });
+
+        $this->commands([
+            MakeGlobalComponentCommand::class,
+        ]);
     }
 
     /**

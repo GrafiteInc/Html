@@ -1,0 +1,29 @@
+<?php
+
+namespace DummyNamespace;
+
+use Grafite\Html\Tags\HtmlTagComponent;
+
+class DummyClass extends HtmlTagComponent
+{
+    public static function template()
+    {
+        return <<<HTML
+            <div></div>
+        HTML;
+    }
+
+    public static function js()
+    {
+        return <<<JS
+            console.log('component');
+        JS;
+    }
+
+    public static function styles()
+    {
+        return <<<CSS
+            /* component CSS */
+        CSS;
+    }
+}
