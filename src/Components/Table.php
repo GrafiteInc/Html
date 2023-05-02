@@ -7,6 +7,7 @@ use Grafite\Html\Components\HtmlComponent;
 
 class Table extends HtmlComponent
 {
+    public $class;
     public $collection;
     public $keys;
     public $sortable;

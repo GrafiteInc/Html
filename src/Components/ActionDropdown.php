@@ -8,15 +8,19 @@ use Grafite\Html\Components\HtmlComponent;
 class ActionDropdown extends HtmlComponent
 {
     public $actions;
+    public $icon;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($actions = [])
-    {
+    public function __construct(
+        $actions = [],
+        $icon = '<span class="fa fa-ellipsis-vertical"></span>'
+    ) {
         $this->actions = $actions;
+        $this->icon = $icon;
     }
 
     /**
@@ -33,7 +37,7 @@ class ActionDropdown extends HtmlComponent
 
             return DropdownButton::make()
                 ->items($this->actions)
-                ->text('<span class="fa fa-ellipsis-vertical"></span>')
+                ->text($this->icon)
                 ->css('btn-sm btn-outline-secondary without-arrow')
                 ->menuCss('dropdown-menu-end')
                 ->render();
