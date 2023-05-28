@@ -20,12 +20,12 @@ class HtmlAssets
      *
      * @return string
      */
-    public function render($type = 'all')
+    public function render($type = 'all', $nonce = false)
     {
         $output = '';
 
-        $output .= $this->compileStyles($type);
-        $output .= $this->compileScripts($type);
+        $output .= $this->compileStyles($type, $nonce);
+        $output .= $this->compileScripts($type, $nonce);
 
         return $output;
     }
@@ -90,8 +90,9 @@ class HtmlAssets
         return $this;
     }
 
-    protected function compileStyles($type)
+    protected function compileStyles($type, $nonce)
     {
+        $nonce = $nonce ? ' nonce="' . $nonce . '"' : '';
         $output = '';
 
         if (in_array($type, ['all', 'styles'])) {
@@ -103,14 +104,15 @@ class HtmlAssets
                 $styles = $minifierCSS->add($styles)->minify();
             }
 
-            $output .= "<style>\n{$styles}\n</style>\n";
+            $output .= "<!-- Html Styles -->\n<style {$nonce}>\n{$styles}\n</style>\n";
         }
 
         return $output;
     }
 
-    protected function compileScripts($type)
+    protected function compileScripts($type, $nonce)
     {
+        $nonce = $nonce ? ' nonce="' . $nonce . '"' : '';
         $output = '';
 
         if (in_array($type, ['all', 'scripts'])) {
@@ -124,7 +126,7 @@ class HtmlAssets
 
             $function = "window.HtmlJS = () => { {$js} }";
 
-            $output .= "<script>\n{$function}\nwindow.HtmlJS();\n</script>\n";
+            $output .= "<!-- Html Scripts -->\n<script {$nonce}>\n{$function}\nwindow.HtmlJS();\n</script>\n";
         }
 
         return $output;

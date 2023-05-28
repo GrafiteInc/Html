@@ -2,6 +2,7 @@
 
 namespace Grafite\Html;
 
+use Exception;
 use Grafite\Html\HtmlAssets;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
@@ -20,16 +21,16 @@ class HtmlProvider extends ServiceProvider
             __DIR__ . '/../config/html.php' => base_path('config/html.php'),
         ]);
 
-        $this->app['blade.compiler']->directive('htmlAssets', function () {
-            return "<?php echo app('" . HtmlAssets::class . "')->render(); ?>";
+        $this->app['blade.compiler']->directive('htmlAssets', function ($nonce) {
+            return "<?php echo app('" . HtmlAssets::class . "')->render('all', $nonce); ?>";
         });
 
-        $this->app['blade.compiler']->directive('htmlScripts', function () {
-            return "<?php echo app('" . HtmlAssets::class . "')->render('scripts'); ?>";
+        $this->app['blade.compiler']->directive('htmlScripts', function ($nonce) {
+            return "<?php echo app('" . HtmlAssets::class . "')->render('scripts', $nonce); ?>";
         });
 
-        $this->app['blade.compiler']->directive('htmlStyles', function () {
-            return "<?php echo app('" . HtmlAssets::class . "')->render('styles'); ?>";
+        $this->app['blade.compiler']->directive('htmlStyles', function ($nonce) {
+            return "<?php echo app('" . HtmlAssets::class . "')->render('styles', $nonce); ?>";
         });
 
         $this->app['blade.compiler']->directive('when', function ($expression) {
