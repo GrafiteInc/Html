@@ -30,7 +30,7 @@ Start a new Laravel project:
 composer create-project laravel/laravel your-project-name
 ```
 
-Then run the following to add Forms
+Then run the following to add HTML
 ```php
 composer require "grafite/html"
 ```
