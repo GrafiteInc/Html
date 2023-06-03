@@ -109,6 +109,7 @@ class HtmlComponent
             app(HtmlAssets::class)
                 ->addScripts(static::scripts())
                 ->addJs(static::js())
+                ->addStylesheets(static::stylesheets())
                 ->addStyles(static::styles());
 
             return static::render();
@@ -124,6 +125,7 @@ class HtmlComponent
         app(HtmlAssets::class)
             ->addScripts(static::scripts())
             ->addJs(static::js())
+            ->addStylesheets(static::stylesheets())
             ->addStyles(static::styles());
 
         return static::$html;
@@ -137,6 +139,11 @@ class HtmlComponent
     public static function usingBootstrap5()
     {
         return Str::of(config('html.bootstrap-version'))->startsWith('5');
+    }
+
+    public static function stylesheets()
+    {
+        return [];
     }
 
     public static function scripts()
