@@ -10,7 +10,7 @@ class Map extends HtmlComponent
     public static $marker;
     public static $center = [36.668419, -41.176225];
     public static $bubbles;
-    public static $zoom = 16;
+    public static $zoom = 3;
     public static $maxZoom = 16;
     public static $skin = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 
