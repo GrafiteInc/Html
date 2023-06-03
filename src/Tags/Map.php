@@ -8,10 +8,10 @@ use Grafite\Html\Tags\HtmlComponent;
 class Map extends HtmlComponent
 {
     public static $marker;
-    public static $center;
+    public static $center = [36.668419, -41.176225];
     public static $bubbles;
-    public static $zoom = 13;
-    public static $maxZoom = 19;
+    public static $zoom = 16;
+    public static $maxZoom = 16;
     public static $skin = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 
     public static function skin($value)
@@ -70,7 +70,7 @@ class Map extends HtmlComponent
 
     public static function center($x, $y)
     {
-        self::$center = "[$x, $y]";
+        self::$center = [$x, $y];
 
         return new static;
     }
@@ -110,7 +110,7 @@ class Map extends HtmlComponent
     {
         $id = self::$id;
         $marker = self::$marker;
-        $center = self::$center;
+        $center = json_encode(self::$center);
         $skin = self::$skin;
         $zoom = self::$zoom;
         $maxZoom = self::$maxZoom;
