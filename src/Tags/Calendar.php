@@ -21,19 +21,37 @@ class Calendar extends HtmlComponent
 
         return <<<JS
             document.addEventListener('DOMContentLoaded', function () {
+                let _toolBar = (window.outerWidth > 400) ? {
+                    start: 'title',
+                    center: '',
+                    end: 'today dayGridMonth,timeGridWeek,timeGridDay prev,next'
+                } : {
+                    start: 'title',
+                    center: '',
+                    end: 'prev,next'
+                };
                 var calendarEl = document.getElementById('{$id}');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
-                    height: '70vh',
-                    headerToolbar: {
-                        start: 'title',
-                        center: '',
-                        end: 'today dayGridMonth,timeGridWeek,timeGridDay prev,next'
-                    },
+                    initialView: (window.outerWidth > 400) ? 'dayGridMonth' : 'timeGridDay',
+                    headerToolbar: _toolBar,
                     timeZone: 'local',
                     themeSystem: 'bootstrap5',
                     eventSources: {$items},
+                    selectable: true,
                     fixedWeekCount: false,
+                    firstDay: 1,
+                    eventDidMount: function (info) {
+                        // manipulating the event title
+                        let titleEl = info.el.getElementsByClassName('fc-event-title')[0]
+
+                        if (titleEl) {
+                            // adding HTML
+                            titleEl.innerHTML = `\${titleEl.textContent.split('<br>')[0]}`
+                        }
+                    },
+                    dateClick: function(info) {
+                        this.changeView("timeGridDay", info.dateStr);
+                    },
                     eventClick: function(info) {
                         const d = new Date(info.event.start);
                         let _title = d.toLocaleTimeString('en-US', {"timeStyle": "short"});
@@ -87,6 +105,6 @@ class Calendar extends HtmlComponent
 
         $id = self::$id;
 
-        self::$html = "<div id=\"{$id}\" class=\"w-100\"></div>";
+        self::$html = "<div id=\"{$id}\" class=\"w-100 h-100\"></div>";
     }
 }

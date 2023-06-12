@@ -12,12 +12,12 @@ class CalendarTest extends TestCase
     {
         $html = Calendar::make()->render();
 
-        $this->assertStringContainsString('class="w-100"></div>', $html);
+        $this->assertStringContainsString('class="w-100 h-100"></div>', $html);
 
         $scripts = app(HtmlAssets::class)->render();
 
         $this->assertStringContainsString('let _title = d.toLocaleTimeString(\'en-US\', {"timeStyle": "short"});', $scripts);
         $this->assertStringContainsString('var calendar = new FullCalendar.Calendar(calendarEl,', $scripts);
-        $this->assertStringContainsString('initialView: \'dayGridMonth\'', $scripts);
+        $this->assertStringContainsString('initialView: (window.outerWidth > 400) ? \'dayGridMonth\' : \'timeGridDay\'', $scripts);
     }
 }
