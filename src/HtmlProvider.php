@@ -70,6 +70,7 @@ class HtmlProvider extends ServiceProvider
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
                 'breadcrumbs' => Components\Breadcrumbs::class,
+                'calendar' => Components\Calendar::class,
                 'card' => Components\Card::class,
                 'action-dropdown' => Components\ActionDropdown::class,
                 'dropdown-item' => Components\DropdownItem::class,
