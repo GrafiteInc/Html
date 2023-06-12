@@ -12,14 +12,14 @@ class Nav extends HtmlComponent
     {
         self::$type = 'pills';
 
-        return new static;
+        return new static();
     }
 
     public static function tabs()
     {
         self::$type = 'tabs';
 
-        return new static;
+        return new static();
     }
 
     public static function process()
@@ -27,11 +27,11 @@ class Nav extends HtmlComponent
         $class = '';
 
         if (self::$type) {
-            $class = 'nav-'. self::$type;
+            $class = 'nav-' . self::$type;
         }
 
         if (self::$css) {
-            $class = " $class ".self::$css;
+            $class = " $class " . self::$css;
         }
 
         $attributes = self::processAttributes([

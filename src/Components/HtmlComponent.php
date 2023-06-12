@@ -26,9 +26,12 @@ class HtmlComponent extends Component
         $menuCss = null,
         $items = [],
         $attributes = []
-    ) {}
+    ) {
+    }
 
-    public function render() {}
+    public function render()
+    {
+    }
 
     protected function setDefaultProperties(
         $id,

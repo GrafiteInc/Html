@@ -17,35 +17,35 @@ class Modal extends HtmlComponent
     {
         self::$content = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function isStatic()
     {
         self::$isStatic = true;
 
-        return new static;
+        return new static();
     }
 
     public static function footer($value)
     {
         self::$footer = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function title($value)
     {
         self::$title = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function dismiss()
     {
         self::$dismiss = true;
 
-        return new static;
+        return new static();
     }
 
     public static function process()
@@ -57,7 +57,7 @@ class Modal extends HtmlComponent
         $text = self::$text ?? '';
         $content = self::$content ?? '';
         $static = (self::$isStatic) ? 'data-backdrop="static" data-bs-backdrop="static"' : '';
-        $id = self::$id ?? 'html_component_modal_'.Str::uuid();
+        $id = self::$id ?? 'html_component_modal_' . Str::uuid();
 
         if (self::usingBootstrap5()) {
             // $class = "bg-{$bg}";

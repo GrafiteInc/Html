@@ -10,7 +10,7 @@ class Carousel extends HtmlComponent
 {
     public static function process()
     {
-        $id = self::$id ?? 'html_carousel_'.Str::uuid().'_';
+        $id = self::$id ?? 'html_carousel_' . Str::uuid() . '_';
 
         if (! Str::of(get_class(self::$items))->contains('Collection')) {
             throw new Exception("Items must be a collection.", 1);

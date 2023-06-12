@@ -33,7 +33,8 @@ class ListGroupItem extends Component
                 $active = 'active';
             }
 
-            return "<a href=\"{$this->href}\" class=\"list-group-item list-group-item-action{$active}\">{$this->content}</a>\n";;
+            return "<a href=\"{$this->href}\" class=\"list-group-item list-group-item-action{$active}\">{$this->content}</a>\n";
+            ;
         };
     }
 }

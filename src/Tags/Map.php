@@ -18,13 +18,13 @@ class Map extends HtmlComponent
     {
         self::$skin = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function bubbles($array)
     {
-        foreach($array as $bubble) {
-            $var = 'bubbles_'.Str::random();
+        foreach ($array as $bubble) {
+            $var = 'bubbles_' . Str::random();
             $x = $bubble['x'];
             $y = $bubble['y'];
             $color = $bubble['color'] ?? 'var(--bs-primary)';
@@ -50,7 +50,7 @@ class Map extends HtmlComponent
             }
         }
 
-        return new static;
+        return new static();
     }
 
 
@@ -58,26 +58,26 @@ class Map extends HtmlComponent
     {
         self::$zoom = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function maxZoom($value)
     {
         self::$maxZoom = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function center($x, $y)
     {
         self::$center = [$x, $y];
 
-        return new static;
+        return new static();
     }
 
     public static function marker($x, $y, $tooltip = null, $click = null)
     {
-        $var = 'marker_'.Str::random();
+        $var = 'marker_' . Str::random();
 
         self::$marker = "var {$var} = L.marker([{$x}, {$y}]).addTo(map);";
 
@@ -89,7 +89,7 @@ class Map extends HtmlComponent
             self::$marker .= " {$var}.on('click', function () { {$click}; });";
         }
 
-        return new static;
+        return new static();
     }
 
     public static function stylesheets()
@@ -112,8 +112,8 @@ class Map extends HtmlComponent
         $marker = self::$marker;
         $center = json_encode(self::$center);
         $skin = self::$skin;
-        $zoom = self::$zoom;
-        $maxZoom = self::$maxZoom;
+        $zoom = self::$zoom ?? 3;
+        $maxZoom = self::$maxZoom ?? 16;
         $bubbles = self::$bubbles;
 
         return <<<JS
@@ -141,7 +141,7 @@ class Map extends HtmlComponent
 
     public static function process()
     {
-        self::$id = self::$id ?? 'html_'.Str::uuid();
+        self::$id = self::$id ?? 'html_' . Str::uuid();
 
         $id = self::$id;
 

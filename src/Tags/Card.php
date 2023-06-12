@@ -18,28 +18,28 @@ class Card extends HtmlComponent
     {
         self::$body = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function title($value)
     {
         self::$title = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function header($value)
     {
         self::$header = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function footer($value)
     {
         self::$footer = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function image($value, $alt = null)
@@ -47,14 +47,14 @@ class Card extends HtmlComponent
         self::$imageSrc = $value;
         self::$imageAlt = $alt;
 
-        return new static;
+        return new static();
     }
 
     public static function shadow($value)
     {
         self::$shadow = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

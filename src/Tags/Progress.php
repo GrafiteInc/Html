@@ -14,21 +14,21 @@ class Progress extends HtmlComponent
     {
         self::$now = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function min($value)
     {
         self::$min = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function max($value)
     {
         self::$max = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

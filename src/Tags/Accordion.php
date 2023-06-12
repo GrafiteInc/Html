@@ -2,15 +2,26 @@
 
 namespace Grafite\Html\Tags;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Grafite\Html\Tags\HtmlComponent;
 
 class Accordion extends HtmlComponent
 {
+    public static $show = false;
+
+    public static function show($value)
+    {
+        self::$show = $value;
+
+        return new static();
+    }
+
     public static function process()
     {
+        $show = self::$show;
         $id = self::$id ?? Str::random(16);
-        $items = self::processLinks(self::$items, $id);
+        $items = self::processLinks(self::$items, $id, $show);
 
         self::$html = <<<HTML
             <div class="accordion" id="{$id}_Accordion">
@@ -19,12 +30,23 @@ class Accordion extends HtmlComponent
 HTML;
     }
 
-    public static function processLinks($items, $id)
+    public static function processLinks($items, $id, $show)
     {
         $index = 1;
         $steps = '';
 
-        foreach ($items as $key => $value) {
+        foreach ($items as $key => $originalValue) {
+            $key = Str::of($key)->title();
+            $value = $originalValue;
+
+            if (is_array($originalValue)) {
+                $value = '<ul>';
+                $value .= collect($originalValue)->map(function ($string) {
+                    return '<li>' . Str::of($string)->title() . '</li>';
+                })->implode(' ');
+                $value .= '</ul>';
+            }
+
             $steps .= <<<HTML
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="{$id}_{$index}">
@@ -32,9 +54,9 @@ HTML;
                             {$key}
                         </button>
                     </h2>
-                    <div id="{$id}_Collapse_{$index}" class="accordion-collapse collapse" aria-labelledby="{$id}_{$index}" data-bs-parent="#{$id}_Accordion">
+                    <div id="{$id}_Collapse_{$index}" class="accordion-collapse collapse show" aria-labelledby="{$id}_{$index}" data-bs-parent="#{$id}_Accordion">
                         <div class="accordion-body">
-                            {$key}
+                            {$value}
                         </div>
                     </div>
                 </div>

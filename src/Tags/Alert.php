@@ -14,21 +14,21 @@ class Alert extends HtmlComponent
     {
         self::$background = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function heading($value)
     {
         self::$heading = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function dismiss($state = true)
     {
         self::$dismiss = $state;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

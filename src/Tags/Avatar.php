@@ -13,14 +13,14 @@ class Avatar extends HtmlComponent
     {
         self::$image = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function css($value)
     {
         self::$css = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

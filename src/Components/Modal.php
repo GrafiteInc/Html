@@ -22,12 +22,12 @@ class Modal extends HtmlComponent
         $dismiss = false,
         $static = false
     ) {
-    $this->id = $id;
-    $this->title = $title;
-    $this->content = $content;
-    $this->footer = $footer;
-    $this->dismiss = $dismiss;
-    $this->static = $static;
+        $this->id = $id;
+        $this->title = $title;
+        $this->content = $content;
+        $this->footer = $footer;
+        $this->dismiss = $dismiss;
+        $this->static = $static;
     }
 
     public function render()

@@ -12,7 +12,7 @@ class Feed extends HtmlComponent
     {
         self::$borderColor = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

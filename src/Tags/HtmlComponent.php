@@ -22,7 +22,7 @@ class HtmlComponent
 
     public static function make()
     {
-        $properties = (new ReflectionClass(new static))
+        $properties = (new ReflectionClass(new static()))
             ->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);
 
         foreach ($properties as $property) {
@@ -33,42 +33,42 @@ class HtmlComponent
         self::$items = [];
         self::$attributes = [];
 
-        return new static;
+        return new static();
     }
 
     public static function onClick($onClick)
     {
         self::$onClick = $onClick;
 
-        return new static;
+        return new static();
     }
 
     public static function items($items)
     {
         self::$items = $items;
 
-        return new static;
+        return new static();
     }
 
     public static function css($css)
     {
         self::$css = $css;
 
-        return new static;
+        return new static();
     }
 
     public static function menuCss($css)
     {
         self::$menuCss = $css;
 
-        return new static;
+        return new static();
     }
 
     public static function url($url)
     {
         self::$url = $url;
 
-        return new static;
+        return new static();
     }
 
     public static function id($id)
@@ -77,28 +77,28 @@ class HtmlComponent
 
         self::$attributes = array_merge(['id' => $id], self::$attributes);
 
-        return new static;
+        return new static();
     }
 
     public static function text($text)
     {
         self::$text = $text;
 
-        return new static;
+        return new static();
     }
 
     public static function attributes($attributes)
     {
         self::$attributes = $attributes;
 
-        return new static;
+        return new static();
     }
 
     public static function data($data)
     {
         self::$data = $data;
 
-        return new static;
+        return new static();
     }
 
     public static function renderWhen($callback)
@@ -169,7 +169,7 @@ class HtmlComponent
 
         foreach ($attributesGroup as $key => $value) {
             if (! empty($value)) {
-                $attributes .= ' '.self::attributeElement($key, $value);
+                $attributes .= ' ' . self::attributeElement($key, $value);
             }
         }
 

@@ -13,7 +13,7 @@ class NavBar extends HtmlComponent
     {
         self::$brand = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function process()
@@ -21,13 +21,13 @@ class NavBar extends HtmlComponent
         $class = '';
 
         if (self::$css) {
-            $class = " $class ".self::$css;
+            $class = " $class " . self::$css;
         }
 
         $brand = self::$brand ?? '';
 
         if (! self::$id) {
-            $id = 'html_'.Str::uuid();
+            $id = 'html_' . Str::uuid();
         }
 
         $attributes = self::processAttributes([

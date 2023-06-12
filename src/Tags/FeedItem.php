@@ -15,14 +15,14 @@ class FeedItem extends HtmlComponent
     {
         self::$content = $value;
 
-        return new static;
+        return new static();
     }
 
     public function date($value)
     {
         self::$date = $value;
 
-        return new static;
+        return new static();
     }
 
     public function icon($value, $background)
@@ -30,7 +30,7 @@ class FeedItem extends HtmlComponent
         self::$icon = $value;
         self::$iconBackground = $background;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

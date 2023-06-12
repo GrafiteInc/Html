@@ -14,7 +14,7 @@ class AccordionTest extends TestCase
             'What is you?' => 'Who is he and you, its me, what is, oh my.',
         ])->render();
 
-        $this->assertStringContainsString('What is you?', $html);
+        $this->assertStringContainsString('What Is You?', $html);
         $this->assertStringContainsString('<button class="accordion-button collapsed"', $html);
     }
 }

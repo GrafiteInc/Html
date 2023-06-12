@@ -13,7 +13,7 @@ class AccordionTest extends ComponentTestCase
         $blade = (string) $this->blade($template);
 
         $this->assertStringContainsString('<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"', $blade);
-        $this->assertStringContainsString('what', $blade);
+        $this->assertStringContainsString('What', $blade);
         $this->assertStringContainsString('accordion', $blade);
     }
 }

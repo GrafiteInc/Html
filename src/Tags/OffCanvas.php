@@ -12,7 +12,7 @@ class OffCanvas extends HtmlComponent
     {
         self::$position = $position;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

@@ -7,6 +7,8 @@ use Grafite\Html\Tags\Accordion as AccordionTag;
 
 class Accordion extends Component
 {
+    public $show = false;
+
     /**
      * Create a new component instance.
      *
@@ -23,6 +25,6 @@ class Accordion extends Component
      */
     public function render()
     {
-        return AccordionTag::make()->items($this->items)->render();
+        return AccordionTag::make()->show($this->show)->items($this->items)->render();
     }
 }

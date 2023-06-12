@@ -18,7 +18,7 @@ class MapTest extends TestCase
         $scripts = app(HtmlAssets::class)->render();
 
         $this->assertStringContainsString('class="leaflet-map"', $html);
-        $this->assertStringContainsString('.setView([43.981739, -80.735542]', $scripts);
+        $this->assertStringContainsString('.setView([43.981739,-80.735542]', $scripts);
         $this->assertStringContainsString('This is my home', $scripts);
     }
 }

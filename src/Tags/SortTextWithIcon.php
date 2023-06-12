@@ -12,7 +12,7 @@ class SortTextWithIcon extends HtmlComponent
     {
         self::$field = $field;
 
-        return new static;
+        return new static();
     }
 
     public static function process()

@@ -18,28 +18,28 @@ class Table extends HtmlComponent
     {
         self::$collection = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function keys($value)
     {
         self::$keys = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function sortable($value)
     {
         self::$sortable = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function headers($value)
     {
         self::$headers = $value;
 
-        return new static;
+        return new static();
     }
 
     public static function process()
@@ -62,7 +62,7 @@ class Table extends HtmlComponent
                 $attributes = '';
 
                 foreach ($keys as $key) {
-                    $class = (collect($keys)->last() === $key) ? 'class="text-right"': '';
+                    $class = (collect($keys)->last() === $key) ? 'class="text-right"' : '';
                     $value = $item->$key ?? 'N/A';
                     $attributes .= "<td ${class}>${value}</td>";
                 }
@@ -96,7 +96,7 @@ class Table extends HtmlComponent
                     $attributes = '';
 
                     foreach ($keys as $key) {
-                        $class = (collect($keys)->last() === $key) ? 'class="text-right"': '';
+                        $class = (collect($keys)->last() === $key) ? 'class="text-right"' : '';
                         $value = $item->$key;
                         $attributes .= "<td ${class}>${value}</td>";
                     }

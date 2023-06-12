@@ -64,7 +64,8 @@ class HtmlProvider extends ServiceProvider
         });
 
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
-            foreach ([
+            foreach (
+                [
                 'accordion' => Components\Accordion::class,
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
@@ -88,7 +89,8 @@ class HtmlProvider extends ServiceProvider
                 'carousel' => Components\Carousel::class,
                 'modal' => Components\Modal::class,
                 'tag' => Components\Tag::class,
-            ] as $alias => $component) {
+                ] as $alias => $component
+            ) {
                 $blade->component($component, $alias, 'html');
             }
         });
