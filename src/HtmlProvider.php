@@ -69,6 +69,7 @@ class HtmlProvider extends ServiceProvider
                 'accordion' => Components\Accordion::class,
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
+                'image' => Components\Image::class,
                 'breadcrumbs' => Components\Breadcrumbs::class,
                 'calendar' => Components\Calendar::class,
                 'card' => Components\Card::class,
