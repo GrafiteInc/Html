@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.9.1] - 2023-06-14
+
+### Fixed
+- Issue with image placeholder
+
 ## [v1.9.0] - 2023-06-14
 
 ### Added
