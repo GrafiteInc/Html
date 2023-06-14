@@ -9,6 +9,7 @@ class Image extends HtmlComponent
 {
     public $thumbnail = false;
     public $fluid = false;
+    public $placeholder = false;
     public $css = '';
     public $alt = '';
     public $source;
@@ -16,12 +17,14 @@ class Image extends HtmlComponent
     public function __construct(
         $thumbnail = false,
         $fluid = false,
+        $placeholder = false,
         $css = '',
         $alt = '',
         $source = null,
     ) {
         $this->thumbnail = $thumbnail;
         $this->fluid = $fluid;
+        $this->placeholder = $placeholder;
         $this->css = $css;
         $this->alt = $alt;
         $this->source = $source;
@@ -36,6 +39,10 @@ class Image extends HtmlComponent
 
         if ($this->fluid) {
             $image = $image->fluid();
+        }
+
+        if ($this->placeholder) {
+            $image = $image->placeholder();
         }
 
         if ($this->thumbnail) {
