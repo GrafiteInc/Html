@@ -91,6 +91,7 @@ class HtmlProvider extends ServiceProvider
                 'nav-button' => Components\NavButton::class,
                 'carousel' => Components\Carousel::class,
                 'modal' => Components\Modal::class,
+                'rating' => Components\Rating::class,
                 'tag' => Components\Tag::class,
                 ] as $alias => $component
             ) {
