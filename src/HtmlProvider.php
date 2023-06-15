@@ -66,6 +66,7 @@ class HtmlProvider extends ServiceProvider
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
             foreach (
                 [
+                'animation' => Components\Animation::class,
                 'accordion' => Components\Accordion::class,
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
