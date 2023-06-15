@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.10.0] - 2023-06-15
+
+### Added
+- New animations
+- Ratings tag
+
 ## [v1.9.1] - 2023-06-14
 
 ### Fixed
