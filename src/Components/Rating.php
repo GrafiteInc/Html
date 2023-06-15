@@ -3,6 +3,7 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Components\HtmlComponent;
+use Grafite\Html\Tags\Rating as RatingTag;
 
 class Rating extends HtmlComponent
 {
@@ -17,7 +18,7 @@ class Rating extends HtmlComponent
 
     public function render()
     {
-        return Rating::make()
+        return RatingTag::make()
             ->max($this->max)
             ->value($this->value)
             ->render();
