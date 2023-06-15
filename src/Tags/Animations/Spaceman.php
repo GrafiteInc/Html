@@ -4,7 +4,7 @@ namespace Grafite\Html\Tags\Animations;
 
 use Grafite\Html\Tags\HtmlComponent;
 
-class Hamster extends HtmlComponent
+class Spaceman extends HtmlComponent
 {
     public static function styles()
     {

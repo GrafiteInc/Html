@@ -4,7 +4,7 @@ namespace Grafite\Html\Tags\Animations;
 
 use Grafite\Html\Tags\HtmlComponent;
 
-class Typewriter extends HtmlComponent
+class Pulse extends HtmlComponent
 {
     public static function styles()
     {

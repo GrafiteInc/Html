@@ -46,7 +46,7 @@ class Alert extends HtmlComponent
         }
 
         if ($heading) {
-            $header = "<h4 class=\"alert-heading\">{$heading}</h4>";
+            $header = "<span class=\"alert-heading\">{$heading}</span>";
         }
 
         if (self::$dismiss) {
@@ -58,7 +58,7 @@ class Alert extends HtmlComponent
         }
 
         self::$html = <<<html
-        <div class="alert {$class} w-100" role="alert">
+        <div class="alert {$class} w-100 position-fixed" role="alert">
             {$header}
             {$message}
             {$close}
