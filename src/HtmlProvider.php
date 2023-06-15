@@ -70,6 +70,7 @@ class HtmlProvider extends ServiceProvider
                 'accordion' => Components\Accordion::class,
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
+                'announcement' => Components\Announcement::class,
                 'image' => Components\Image::class,
                 'breadcrumbs' => Components\Breadcrumbs::class,
                 'calendar' => Components\Calendar::class,
@@ -91,8 +92,8 @@ class HtmlProvider extends ServiceProvider
                 'nav-button' => Components\NavButton::class,
                 'carousel' => Components\Carousel::class,
                 'modal' => Components\Modal::class,
-                'rating' => Components\Rating::class,
                 'tag' => Components\Tag::class,
+                'rating' => Components\Rating::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
