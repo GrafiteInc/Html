@@ -9,10 +9,18 @@ class Announcement extends HtmlComponent
     public static $background = 'info';
     public static $heading;
     public static $dismiss;
+    public static $timeout;
 
     public static function background($value)
     {
         self::$background = $value;
+
+        return new static();
+    }
+
+    public static function timeout($value)
+    {
+        self::$timeout = $value;
 
         return new static();
     }
@@ -29,6 +37,20 @@ class Announcement extends HtmlComponent
         self::$dismiss = $state;
 
         return new static();
+    }
+
+    public static function js()
+    {
+        $timeout = self::$timeout;
+
+        return <<<JS
+            document.addEventListener('DOMContentLoaded', function () {
+                setTimeout(function () {
+                    let announcement = bootstrap.Alert.getOrCreateInstance('.html-announcement')
+                    announcement.close();
+                }, {$timeout});
+            });
+        JS;
     }
 
     public static function styles()
@@ -72,7 +94,7 @@ class Announcement extends HtmlComponent
         }
 
         self::$html = <<<html
-        <div class="alert {$class} html-announcement" role="alert">
+        <div class="alert {$class} html-announcement fade show" role="alert">
             {$header}
             {$message}
             {$close}

@@ -10,17 +10,20 @@ class Announcement extends HtmlComponent
     public $background = 'info';
     public $heading;
     public $dismiss;
+    public $timeout;
 
     public function __construct(
         $text = null,
         $background = 'info',
         $heading = null,
-        $dismiss = false
+        $dismiss = false,
+        $timeout = 5000
     ) {
         $this->text = $text;
         $this->background = $background;
         $this->heading = $heading;
         $this->dismiss = $dismiss;
+        $this->timeout = $timeout;
     }
 
     public function render()
@@ -30,6 +33,7 @@ class Announcement extends HtmlComponent
             ->background($this->background)
             ->heading($this->heading)
             ->dismiss($this->dismiss)
+            ->timeout($this->timeout)
             ->render();
     }
 }
