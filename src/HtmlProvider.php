@@ -21,6 +21,10 @@ class HtmlProvider extends ServiceProvider
             __DIR__ . '/../config/html.php' => base_path('config/html.php'),
         ]);
 
+         $this->app['blade.compiler']->directive('fathom', function () {
+            return "<?php echo app('" . Fathom::class . "')->render(); ?>";
+        });
+
         $this->app['blade.compiler']->directive('htmlAssets', function ($nonce) {
             return "<?php echo app('" . HtmlAssets::class . "')->render('all', $nonce); ?>";
         });
