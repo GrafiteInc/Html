@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.10.4] - 2023-06-30
+
+### Added
+- Fathom Analytics tag
+- Timeouts for Announcements
+
 ## [v1.10.3] - 2023-06-15
 
 ### Fixed
