@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.10.5] - 2023-07-24
+
+### Fixed
+- Issue with Fathom directive
+
 ## [v1.10.4] - 2023-06-30
 
 ### Added
