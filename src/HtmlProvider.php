@@ -4,6 +4,7 @@ namespace Grafite\Html;
 
 use Exception;
 use Grafite\Html\HtmlAssets;
+use Grafite\Html\Tags\Fathom;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 use Grafite\Html\Commands\MakeGlobalComponentCommand;
