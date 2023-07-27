@@ -98,6 +98,7 @@ class HtmlProvider extends ServiceProvider
                 'carousel' => Components\Carousel::class,
                 'modal' => Components\Modal::class,
                 'tag' => Components\Tag::class,
+                'tilt' => Components\Tilt::class,
                 'rating' => Components\Rating::class,
                 ] as $alias => $component
             ) {
