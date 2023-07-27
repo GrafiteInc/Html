@@ -10,6 +10,7 @@ class Tilt extends HtmlComponent
     public static $content;
     public static $startX = 20;
     public static $startY = -20;
+    public static $glare = 'false';
 
     public static function content($value)
     {
@@ -28,6 +29,13 @@ class Tilt extends HtmlComponent
     public static function startY($value)
     {
         self::$startY = $value;
+
+        return new static();
+    }
+
+    public static function glare($value)
+    {
+        self::$glare = $value;
 
         return new static();
     }
@@ -51,10 +59,12 @@ class Tilt extends HtmlComponent
         $id = self::$id;
         $startX = self::$startX;
         $startY = self::$startY;
+        $glare = self::$glare;
 
         return <<<JS
             VanillaTilt.init(document.querySelector("#{$id}"), {
                 "reset-to-start": true,
+                glare: {$glare},
                 startX: {$startX},
                 startY: {$startY}
             });
