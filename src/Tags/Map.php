@@ -141,7 +141,7 @@ class Map extends HtmlComponent
 
     public static function process()
     {
-        self::$id = self::$id ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
 
         $id = self::$id;
 

@@ -9,7 +9,7 @@ class DropdownButton extends HtmlComponent
 {
     public static function process()
     {
-        $id = self::$id ?? 'html_' . Str::uuid();
+        $id = static::$attributes['id'] ?? 'html_' . Str::uuid();
         $css = self::$css;
         $menuCss = self::$menuCss;
         $text = self::$text;
