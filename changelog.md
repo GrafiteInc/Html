@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.10.9] - 2023-08-10
+
+### Fixed
+- Size issue with avatar
+
 ## [v1.10.8] - 2023-07-27
 
 ### Fixed
