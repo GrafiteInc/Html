@@ -73,6 +73,7 @@ html;
 .html-component-activity-feed .feed-item:last-child .feed-content {
   border: none;
   border-color: transparent;
+}
 styles;
     }
 }
