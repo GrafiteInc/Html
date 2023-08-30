@@ -9,6 +9,7 @@ class Image extends HtmlComponent
     public static $thumbnail = false;
     public static $fluid = false;
     public static $placeholder = false;
+    public static $lazy = false;
     public static $css = '';
     public static $alt = '';
     public static $source;
@@ -41,6 +42,13 @@ class Image extends HtmlComponent
         return new static();
     }
 
+    public static function lazy()
+    {
+        self::$lazy = true;
+
+        return new static();
+    }
+
     public static function placeholder()
     {
         self::$placeholder = true;
@@ -58,9 +66,14 @@ class Image extends HtmlComponent
     public static function process()
     {
         $html = '';
+        $lazy = '';
         $alt = self::$alt;
         $source = self::$source;
         $class = self::$css;
+
+        if (self::$lazy) {
+            $lazy = ' loading="lazy"';
+        }
 
         if (self::$thumbnail) {
             $class .= " img-thumbnail";
@@ -75,7 +88,7 @@ class Image extends HtmlComponent
         }
 
         $class = trim($class);
-        $html .= "<img class=\"{$class}\" src=\"{$source}\" alt=\"{$alt}\" />";
+        $html .= "<img {$lazy} class=\"{$class}\" src=\"{$source}\" alt=\"{$alt}\" />";
 
         if (self::$placeholder) {
             $html .= '</div>';
