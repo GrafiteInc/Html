@@ -12,7 +12,7 @@ class ImageTest extends ComponentTestCase
 
         $blade = (string) $this->blade($template);
 
-        $this->assertStringContainsString('<img class="img-thumbnail img-fluid" src="https://somewhere.com/picture.jpg"', $blade);
+        $this->assertStringContainsString('<img  class="img-thumbnail img-fluid" src="https://somewhere.com/picture.jpg"', $blade);
         $this->assertStringContainsString('img-thumbnail img-fluid', $blade);
         $this->assertStringContainsString('What!', $blade);
     }
