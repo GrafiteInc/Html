@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.10.12] - 2023-09-06
+
+### Added
+- Backdrop toggle for offcanvas
+
 ## [v1.10.11] - 2023-08-30
 
 ### Added
