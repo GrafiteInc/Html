@@ -8,9 +8,18 @@ class OffCanvas extends HtmlComponent
 {
     public static $position;
 
+    public static $backdrop;
+
     public static function position($position)
     {
         self::$position = $position;
+
+        return new static();
+    }
+
+    public static function backdrop($backdrop)
+    {
+        self::$backdrop = $backdrop;
 
         return new static();
     }
@@ -20,11 +29,12 @@ class OffCanvas extends HtmlComponent
         $css = self::$css ?? '';
         $text = self::$text ?? '';
         $position = self::$position ?? 'end';
+        $backdrop = self::$backdrop ?? 'true';
         $id = self::$id ?? 'html_component_offcanvas_' . Str::uuid();
 
 
         self::$html = <<<html
-            <div id="offCanvas_{$id}" class="offcanvas offcanvas-{$position}" ref="offcanvas-panel" tabindex="-1" aria-labelledby="offcanvasLabel_{$id}">
+            <div id="offCanvas_{$id}" data-bs-backdrop="{$backdrop}" class="offcanvas offcanvas-{$position}" ref="offcanvas-panel" tabindex="-1" aria-labelledby="offcanvasLabel_{$id}">
                 <div class="offcanvas-header">
                     <h5 id="offcanvasLabel_{$id}">{$text}</h5>
                     <button type="button" class="btn-close bg-secondary text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

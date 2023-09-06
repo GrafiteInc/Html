@@ -11,6 +11,7 @@ class Offcanvas extends HtmlComponent
     public $cssClass;
     public $id;
     public $position;
+    public $backdrop;
 
     /**
      * Create a new component instance.
@@ -21,11 +22,13 @@ class Offcanvas extends HtmlComponent
         $title = null,
         $cssClass = null,
         $id = null,
+        $backdrop = 'true',
         $position = 'end'
     ) {
         $this->title = $title;
         $this->cssClass = $cssClass;
         $this->position = $position;
+        $this->backdrop = $backdrop;
         $this->id = $id;
     }
 
@@ -41,6 +44,7 @@ class Offcanvas extends HtmlComponent
             ->css($this->cssClass)
             ->id($this->id)
             ->position($this->position)
+            ->backdrop($this->backdrop)
             ->render();
     }
 }
