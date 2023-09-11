@@ -3,7 +3,7 @@
 **HTML** - A handy set of HTML generators for Laravel.
 
 [![Build Status](https://github.com/GrafiteInc/Html/workflows/PHP%20Package%20Tests/badge.svg?branch=main)](https://github.com/GrafiteInc/Html/actions?query=workflow%3A%22PHP+Package+Tests%22)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5c99d7022684ac3a220c/maintainability)](https://codeclimate.com/github/GrafiteInc/Html/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/33be8497c70aa364938d/maintainability)](https://codeclimate.com/github/GrafiteInc/Html/maintainability)
 [![Packagist](https://img.shields.io/packagist/dt/grafite/html.svg)](https://packagist.org/packages/grafite/html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://packagist.org/packages/grafite/html)
 
