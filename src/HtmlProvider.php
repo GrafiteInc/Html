@@ -95,6 +95,7 @@ class HtmlProvider extends ServiceProvider
                 'nav' => Components\Nav::class,
                 'nav-link' => Components\NavLink::class,
                 'nav-button' => Components\NavButton::class,
+                'nav-dropdown' => Components\NavDropdown::class,
                 'carousel' => Components\Carousel::class,
                 'modal' => Components\Modal::class,
                 'tag' => Components\Tag::class,

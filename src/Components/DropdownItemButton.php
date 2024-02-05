@@ -7,18 +7,23 @@ use Grafite\Html\Components\HtmlComponent;
 
 class DropdownItemButton extends HtmlComponent
 {
+    public $text;
     public $onClick;
 
     public function __construct(
-        $onClick
+        $text = null,
+        $onClick = null,
     ) {
+        $this->text = $text;
         $this->onClick = $onClick;
     }
 
     public function render()
     {
         return function (array $data) {
-            $this->text = $data['slot'];
+            if (empty($this->text)) {
+                $this->text = (string) $data['slot'];
+            }
 
             return ButtonTag::make()
                 ->text($this->text)

@@ -18,8 +18,7 @@ class Carousel extends HtmlComponent
 
         $indicators = self::$items->map(function ($item, $key) use ($id) {
             $active = ($key === 1) ? 'active' : '';
-            $key = $key - 1;
-            return "<li data-target=\"#${id}Indicators\" data-bs-target=\"#${id}Indicators\" data-slide-to=\"${key}\" data-bs-slide-to=\"${key}\" class=\"{$active}\"></li>";
+            return "<button data-target=\"#${id}Indicators\" data-bs-target=\"#${id}Indicators\" data-slide-to=\"${key}\" data-bs-slide-to=\"${key}\" class=\"{$active}\"></button>";
         })->implode("\n");
 
         $items = self::$items->map(function ($item, $key) {
@@ -29,9 +28,9 @@ class Carousel extends HtmlComponent
 
         self::$html = <<<html
 <div id="{$id}Indicators" class="carousel slide" data-ride="carousel" data-bs-ride="carousel">
-  <ol class="carousel-indicators">
+  <div class="carousel-indicators">
     {$indicators}
-  </ol>
+  </div>
   <div class="carousel-inner">
     {$items}
   </div>

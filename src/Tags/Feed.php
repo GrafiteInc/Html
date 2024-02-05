@@ -66,7 +66,7 @@ html;
   border-left: 2px solid;
   padding-left: 48px;
   margin-left: -28px;
-  padding-top: 4px;
+  padding-top: 14px;
   padding-bottom: 48px;
 }
 

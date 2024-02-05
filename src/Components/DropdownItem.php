@@ -8,16 +8,20 @@ use Grafite\Html\Components\HtmlComponent;
 class DropdownItem extends HtmlComponent
 {
     public $url;
+    public $text;
 
-    public function __construct($url)
+    public function __construct($url = null, $text = null)
     {
+        $this->text = $text;
         $this->url = $url;
     }
 
     public function render()
     {
         return function (array $data) {
-            $this->text = $data['slot'];
+            if (empty($this->text)) {
+                $this->text = (string) $data['slot'];
+            }
 
             return ItemTag::make()
                 ->text($this->text)

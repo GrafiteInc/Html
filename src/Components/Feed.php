@@ -20,7 +20,7 @@ class Feed extends Component
     ) {
         if (is_null($icon)) {
             $this->icon = '<i class="fas fa-comment text-white"></i>';
-            $this->icon = 'var(--bs-primary)';
+            $this->icon = '<span class="fa fa-flag"></span>';
         }
     }
 
