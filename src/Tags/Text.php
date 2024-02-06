@@ -108,7 +108,7 @@ class Text extends HtmlComponent
                         delay: (el, i) => 50 * i
                     }).add({
                         targets: '#{$id}',
-                        opacity: 0,
+                        opacity: 100,
                         duration: 1000,
                         easing: "easeOutExpo",
                         delay: 1000
