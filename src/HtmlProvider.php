@@ -101,6 +101,10 @@ class HtmlProvider extends ServiceProvider
                 'tag' => Components\Tag::class,
                 'tilt' => Components\Tilt::class,
                 'rating' => Components\Rating::class,
+                'text' => Components\Text::class,
+                'countdown' => Components\Countdown::class,
+                'video' => Components\Video::class,
+                'image-compare' => Components\ImageCompare::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
