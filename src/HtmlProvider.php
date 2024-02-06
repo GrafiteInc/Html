@@ -105,6 +105,8 @@ class HtmlProvider extends ServiceProvider
                 'countdown' => Components\Countdown::class,
                 'video' => Components\Video::class,
                 'image-compare' => Components\ImageCompare::class,
+                'parallax' => Components\Parallax::class,
+                'lightbox' => Components\Lightbox::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
