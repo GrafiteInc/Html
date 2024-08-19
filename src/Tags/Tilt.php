@@ -62,11 +62,13 @@ class Tilt extends HtmlComponent
         $glare = self::$glare;
 
         return <<<JS
-            VanillaTilt.init(document.querySelector("#{$id}"), {
-                "reset-to-start": true,
-                glare: {$glare},
-                startX: {$startX},
-                startY: {$startY}
+            document.addEventListener('DOMContentLoaded', (event) => {
+                VanillaTilt.init(document.querySelector("#{$id}"), {
+                    "reset-to-start": true,
+                    glare: {$glare},
+                    startX: {$startX},
+                    startY: {$startY}
+                });
             });
         JS;
     }
