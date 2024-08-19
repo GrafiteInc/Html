@@ -53,8 +53,14 @@ class HtmlAssets
      */
     public function addScripts($scripts)
     {
-        foreach ($scripts as $script) {
-            $this->scripts[] = '<script type="module" src="' . $script . '"></script>';
+        foreach ($scripts as $script => $scriptType) {
+            $type = 'type="module"';
+
+            if ($scriptType === 'global') {
+                $type = '';
+            }
+
+            $this->scripts[] = '<script '.$type.' src="' . $script . '"></script>';
         }
 
         return $this;

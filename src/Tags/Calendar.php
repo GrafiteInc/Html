@@ -10,7 +10,7 @@ class Calendar extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.min.js',
+            '//cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js' => 'global',
         ];
     }
 
@@ -75,7 +75,7 @@ class Calendar extends HtmlComponent
             @media (prefers-color-scheme: light) {
                 :root {
                     --app-fc-weekend: var(--bs-gray-200);
-                    --app-fc-day-other: var(--bs-gray-100);
+                    --app-fc-day-past: var(--bs-gray-100);
                 }
             }
             @media (prefers-color-scheme: dark) {
@@ -88,6 +88,9 @@ class Calendar extends HtmlComponent
                 --fc-border-color: var(--bs-border-color) !important;
             }
             .fc-day-other {
+                background-color: var(--app-fc-day-other);
+            }
+            .fc-day-past {
                 background-color: var(--app-fc-day-other);
             }
             .fc-day-sat, .fc-day-sun {
