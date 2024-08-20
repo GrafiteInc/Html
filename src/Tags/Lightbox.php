@@ -43,6 +43,7 @@ class Lightbox extends HtmlComponent
 
         return <<<JS
            document.addEventListener('DOMContentLoaded', (event) => {
+                refreshFsLightbox();
             });
         JS;
     }
