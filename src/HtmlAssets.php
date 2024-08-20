@@ -126,9 +126,7 @@ class HtmlAssets
 
             $function = "window.HtmlJS = () => { {$js} }";
 
-            $output .= "<!-- Html Scripts -->\n<script type=\"module\" {$nonce}>\n{$function}\n
-            document.addEventListener('DOMContentLoaded', (event) => { window.HtmlJS(); });
-            \n</script>\n";
+            $output .= "<!-- Html Scripts -->\n<script type=\"module\" {$nonce}>\n{$function}\nwindow.HtmlJS();\n</script>\n";
         }
 
         return $output;
