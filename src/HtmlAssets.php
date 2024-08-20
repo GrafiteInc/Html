@@ -53,14 +53,8 @@ class HtmlAssets
      */
     public function addScripts($scripts)
     {
-        foreach ($scripts as $script => $scriptType) {
-            $type = 'type="module"';
-
-            if ($scriptType === 'global') {
-                $type = '';
-            }
-
-            $this->scripts[] = '<script '.$type.' src="' . $script . '"></script>';
+        foreach ($scripts as $script) {
+            $this->scripts[] = '<script src="' . $script . '"></script>';
         }
 
         return $this;
@@ -132,7 +126,9 @@ class HtmlAssets
 
             $function = "window.HtmlJS = () => { {$js} }";
 
-            $output .= "<!-- Html Scripts -->\n<script type=\"module\" {$nonce}>\n{$function}\nwindow.HtmlJS();\n</script>\n";
+            $output .= "<!-- Html Scripts -->\n<script type=\"module\" {$nonce}>\n{$function}\n
+            document.addEventListener('DOMContentLoaded', (event) => { window.HtmlJS(); });
+            \n</script>\n";
         }
 
         return $output;

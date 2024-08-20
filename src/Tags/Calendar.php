@@ -10,7 +10,7 @@ class Calendar extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js' => 'global',
+            '//cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js',
         ];
     }
 
