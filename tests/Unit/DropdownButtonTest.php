@@ -18,7 +18,7 @@ class DropdownButtonTest extends TestCase
             ->css('btn-info')
             ->render();
 
-        $this->assertStringContainsString('<a class="dropdown-item" href="#">Nothing</a>', $html);
+        $this->assertStringContainsString('<a class="dropdown-item" target="_self" href="#">Nothing</a>', $html);
         $this->assertStringContainsString('<a class="btn dropdown-toggle btn-info" href="#" role="button" ', $html);
     }
 
@@ -35,7 +35,7 @@ class DropdownButtonTest extends TestCase
             ->render();
 
         $this->assertStringContainsString('<div class="dropdown-menu dropdown-menu-end" aria-labelledby="DropdownButtonAlign">', $html);
-        $this->assertStringContainsString('<a class="dropdown-item" href="#">Nothing</a>', $html);
+        $this->assertStringContainsString('<a class="dropdown-item" target="_self" href="#">Nothing</a>', $html);
         $this->assertStringContainsString('<a class="btn dropdown-toggle btn-info" href="#" role="button" ', $html);
     }
 }

@@ -10,7 +10,8 @@ class DropdownItem extends HtmlComponent
     {
         $url = self::$url;
         $text = self::$text;
+        $target = self::$attributes['target'] ?? '_self';
 
-        self::$html = "<a class=\"dropdown-item\" href=\"$url\">$text</a>";
+        self::$html = "<a class=\"dropdown-item\" target=\"$target\" href=\"$url\">$text</a>";
     }
 }
