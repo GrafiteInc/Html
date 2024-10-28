@@ -107,6 +107,7 @@ class HtmlProvider extends ServiceProvider
                 'image-compare' => Components\ImageCompare::class,
                 'parallax' => Components\Parallax::class,
                 'lightbox' => Components\Lightbox::class,
+                'word-switcher' => Components\WordSwitcher::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
