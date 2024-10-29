@@ -2,11 +2,16 @@
 
 namespace Grafite\Html\Tags;
 
+use Exception;
 use Illuminate\Support\Str;
 use Grafite\Html\Tags\HtmlComponent;
 
 class WordSwitcher extends HtmlComponent
 {
+    public static $duration;
+    public static $delay;
+    public static $random;
+
     public static function stylesheets()
     {
         return [];
@@ -17,10 +22,34 @@ class WordSwitcher extends HtmlComponent
         return [];
     }
 
+    public static function duration($value)
+    {
+        self::$duration = $value;
+
+        return new static();
+    }
+
+    public static function delay($value)
+    {
+        self::$delay = $value;
+
+        return new static();
+    }
+
+    public static function random($value)
+    {
+        self::$random = $value;
+
+        return new static();
+    }
+
     public static function js()
     {
         $id = self::$id;
         $items = json_encode(self::$items);
+        $delay = self::$delay ?? 3000;
+        $duration = self::$duration ?? 250;
+        $random = self::$random ?? false;
 
         return <<<JS
             document.addEventListener('DOMContentLoaded', (event) => {
@@ -116,7 +145,6 @@ class WordSwitcher extends HtmlComponent
                         }
                     };
 
-
                     opts = Object.assign(Object.assign({}, defaultOptions), opts || {});
                     let curWord = -1;
 
@@ -124,9 +152,9 @@ class WordSwitcher extends HtmlComponent
                 }
 
                 wordSwitcher(document.getElementById('{$id}'), {$items}, {
-                    switchDelay: 3000,
-                    animationDuration: 0,
-                    random: false,
+                    switchDelay: "{$delay}",
+                    animationDuration: "{$duration}",
+                    random: "{$random}",
                     className: 'html-word-switcher'
                 });
             });
@@ -136,6 +164,13 @@ class WordSwitcher extends HtmlComponent
     public static function styles()
     {
         return <<<CSS
+            .html-word-switcher-enter-active, .html-word-switcher-leave-active {
+                transition: opacity 1s;
+            }
+
+            .html-word-switcher-enter, .html-word-switcher-leave-to {
+                opacity: 0;
+            }
         CSS;
     }
 

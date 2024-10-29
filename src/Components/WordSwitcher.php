@@ -9,6 +9,9 @@ class WordSwitcher extends HtmlComponent
 {
     public $items;
     public $css;
+    public $duration;
+    public $delay;
+    public $random;
 
     /**
      * Create a new component instance.
@@ -17,10 +20,16 @@ class WordSwitcher extends HtmlComponent
      */
     public function __construct(
         $items = [],
-        $css = ''
+        $css = '',
+        $duration = null,
+        $delay = null,
+        $random = null
     ) {
         $this->items = $items;
         $this->css = $css;
+        $this->duration = $duration;
+        $this->delay = $delay;
+        $this->random = $random;
     }
 
     /**
@@ -38,6 +47,9 @@ class WordSwitcher extends HtmlComponent
             return WordSwitcherTag::make()
                 ->items($this->items)
                 ->css($this->css)
+                ->duration($this->duration)
+                ->delay($this->delay)
+                ->random($this->random)
                 ->render();
         };
     }
