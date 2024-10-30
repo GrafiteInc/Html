@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.14.0] - 2024-10-30
+
+### Added
+- New WordSwitcher component
+
 ## [v1.13.5] - 2024-10-07
 
 ### Fixed
