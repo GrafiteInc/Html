@@ -12,6 +12,7 @@ class Map extends HtmlComponent
     public static $bubbles;
     public static $zoom = 3;
     public static $maxZoom = 16;
+    public static $minZoom = 16;
     public static $skin = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 
     public static function skin($value)
@@ -68,6 +69,13 @@ class Map extends HtmlComponent
         return new static();
     }
 
+    public static function minZoom($value)
+    {
+        self::$minZoom = $value;
+
+        return new static();
+    }
+
     public static function center($x, $y)
     {
         self::$center = [$x, $y];
@@ -114,6 +122,7 @@ class Map extends HtmlComponent
         $skin = self::$skin;
         $zoom = self::$zoom ?? 3;
         $maxZoom = self::$maxZoom ?? 16;
+        $minZoom = self::$minZoom ?? 16;
         $bubbles = self::$bubbles;
 
         return <<<JS
@@ -121,6 +130,7 @@ class Map extends HtmlComponent
                 var map = L.map('{$id}').setView({$center}, $zoom);
                 L.tileLayer('{$skin}', {
                     maxZoom: $maxZoom,
+                    minZoom: $minZoom,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 }).addTo(map);
 
