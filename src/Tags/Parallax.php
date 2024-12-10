@@ -48,7 +48,7 @@ class Parallax extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js',
+            '//cdn.jsdelivr.net/npm/simple-parallax-js@6.0.1/dist/vanilla/simpleParallaxVanilla.umd.min.js',
         ];
     }
 
@@ -64,7 +64,7 @@ class Parallax extends HtmlComponent
         return <<<JS
            document.addEventListener('DOMContentLoaded', (event) => {
                 var image = document.getElementById('{$id}');
-                new simpleParallax(image, {$config});
+                new SimpleParallax(image, {$config});
             });
         JS;
     }

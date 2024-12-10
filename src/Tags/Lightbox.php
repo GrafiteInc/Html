@@ -32,7 +32,7 @@ class Lightbox extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/fslightbox@3.4.1/index.min.js',
+            '//cdn.jsdelivr.net/npm/fslightbox@3.4.2/index.min.js',
         ];
     }
 
