@@ -76,6 +76,7 @@ class HtmlProvider extends ServiceProvider
                 'avatar' => Components\Avatar::class,
                 'alert' => Components\Alert::class,
                 'announcement' => Components\Announcement::class,
+                'badge' => Components\Badge::class,
                 'image' => Components\Image::class,
                 'breadcrumbs' => Components\Breadcrumbs::class,
                 'calendar' => Components\Calendar::class,
