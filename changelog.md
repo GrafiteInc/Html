@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.15.1] - 2025-02-05
+
+### Changed
+- Improved countdown
+
 ## [v1.15.0] - 2025-01-23
 
 ### Added
