@@ -53,14 +53,30 @@ class Countdown extends HtmlComponent
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Output the result in an element with id="demo"
-                document.getElementById("{$id}").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
+                var _countDownString = '';
+
+                if (days > 0) {
+                    _countDownString += days + "d ";
+                }
+
+                if (hours > 0) {
+                    _countDownString += hours + "h ";
+                }
+
+                if (minutes > 0) {
+                    _countDownString += minutes + "m ";
+                }
+
+                if (seconds > 0) {
+                    _countDownString += seconds + "s ";
+                }
+
+                document.getElementById("{$id}").innerHTML = _countDownString;
 
                 // If the count down is over, write some text
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("{$id}").innerHTML = "EXPIRED";
                 }
                 }, 1000);
             });
