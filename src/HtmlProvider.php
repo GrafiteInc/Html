@@ -107,6 +107,7 @@ class HtmlProvider extends ServiceProvider
                 'video' => Components\Video::class,
                 'image-compare' => Components\ImageCompare::class,
                 'parallax' => Components\Parallax::class,
+                'lottie' => Components\Lottie::class,
                 'lightbox' => Components\Lightbox::class,
                 'word-switcher' => Components\WordSwitcher::class,
                 ] as $alias => $component
