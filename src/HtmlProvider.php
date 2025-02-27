@@ -94,6 +94,7 @@ class HtmlProvider extends ServiceProvider
                 'list-group-item' => Components\ListGroupItem::class,
                 'spinner' => Components\Spinner::class,
                 'progress' => Components\Progress::class,
+                'popover' => Components\Popover::class,
                 'nav' => Components\Nav::class,
                 'nav-link' => Components\NavLink::class,
                 'nav-button' => Components\NavButton::class,
