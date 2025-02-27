@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.17.0] - 2025-02-27
+
+### Added
+- Popover component
+- Group button component
+
+### Changed
+- Aligned dependencies with jsdelivr
+
 ## [v1.16.0] - 2025-02-22
 
 ### Added
