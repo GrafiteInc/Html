@@ -36,14 +36,14 @@ class Video extends HtmlComponent
     public static function stylesheets()
     {
         return [
-            '//cdn.plyr.io/3.7.8/plyr.css',
+            '//cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.min.css',
         ];
     }
 
     public static function scripts()
     {
         return [
-            '//cdn.plyr.io/3.7.8/plyr.js',
+            '//cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.min.js',
         ];
     }
 

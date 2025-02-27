@@ -19,15 +19,13 @@ class Text extends HtmlComponent
 
     public static function stylesheets()
     {
-        return [
-            // '//cdn.plyr.io/3.7.8/plyr.css',
-        ];
+        return [];
     }
 
     public static function scripts()
     {
         return [
-            '//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js',
+            '//cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js'
         ];
     }
 
