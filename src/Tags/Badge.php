@@ -2,7 +2,12 @@
 
 namespace Grafite\Html\Tags;
 
+use PUGX\Poser\Poser;
 use Grafite\Html\Tags\HtmlComponent;
+use PUGX\Poser\Render\SvgFlatRender;
+use PUGX\Poser\Render\SvgPlasticRender;
+use PUGX\Poser\Render\SvgFlatSquareRender;
+use PUGX\Poser\Render\SvgForTheBadgeRenderer;
 
 class Badge extends HtmlComponent
 {
@@ -40,26 +45,30 @@ class Badge extends HtmlComponent
         return new static();
     }
 
-    public static function icon($value)
-    {
-        self::$icon = $value;
-
-        return new static();
-    }
-
     public static function process()
     {
         $name = self::$name;
         $status = self::$status;
         $color = self::$color;
         $theme = self::$theme;
-        $icon = self::$icon;
 
-        if (! in_array($theme, ['flat', 'flat-square', 'for-the-badge', 'plastic', 'social'])) {
+        if (! in_array($theme, ['flat', 'flat-square', 'for-the-badge', 'plastic'])) {
             throw new \Exception("Error Processing Theme", 1);
         }
 
-        $contents = file_get_contents("https://img.shields.io/badge/$name-$status-$color?style=$theme&logo=$icon");
+        $flat = new SvgFlatRender();
+        $plastic = new SvgPlasticRender();
+        $flatSquare = new SvgFlatSquareRender();
+        $forTheBadge = new SvgForTheBadgeRenderer();
+
+        $poser = new Poser([
+            $flat,
+            $plastic,
+            $flatSquare,
+            $forTheBadge,
+        ]);
+
+        $contents = $poser->generate($name, $status, $color, $theme);
 
         self::$html = $contents;
     }
