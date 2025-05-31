@@ -70,6 +70,6 @@ class Badge extends HtmlComponent
 
         $contents = $poser->generate($name, $status, $color, $theme);
 
-        self::$html = $contents;
+        self::$html = (string) $contents;
     }
 }
