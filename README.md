@@ -2,8 +2,8 @@
 
 **HTML** - A handy set of HTML generators for Laravel.
 
-[![Build Status](https://github.com/GrafiteInc/Html/workflows/PHP%20Package%20Tests/badge.svg?branch=main)](https://github.com/GrafiteInc/Html/actions?query=workflow%3A%22PHP+Package+Tests%22)
-[![Maintainability](https://api.codeclimate.com/v1/badges/33be8497c70aa364938d/maintainability)](https://codeclimate.com/github/GrafiteInc/Html/maintainability)
+[![Build Status](https://github.com/GrafiteInc/Html/actions/workflows/php-package-tests.yml/badge.svg?branch=main)](https://github.com/GrafiteInc/Html/actions/workflows/php-package-tests.yml)
+[![Maintainability](https://qlty.sh/badges/319c1648-63aa-47e0-b9b7-1b03c8b93f6d/maintainability.svg)](https://qlty.sh/gh/GrafiteInc/projects/Html)
 [![Packagist](https://img.shields.io/packagist/dt/grafite/html.svg)](https://packagist.org/packages/grafite/html)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://packagist.org/packages/grafite/html)
 
@@ -21,7 +21,7 @@ The HTML package lets you generate forms as well as fields with standard make co
 
 | Laravel Version | Package Tag | Supported |
 |-----------------|-------------|-----------|
-| ^7.x - ^11.x | 1.x | yes |
+| ^7.x - ^12.x | 1.x | yes |
 
 ### Installation
 
