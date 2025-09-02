@@ -6,6 +6,7 @@ use ReflectionClass;
 use ReflectionProperty;
 use Illuminate\Support\Str;
 use Grafite\Html\HtmlAssets;
+use Illuminate\Support\HtmlString;
 
 class HtmlComponent
 {
@@ -193,5 +194,18 @@ class HtmlComponent
         if (! is_null($value)) {
             return $key . '="' . e($value, false) . '"';
         }
+    }
+
+    public static function toHtml()
+    {
+        static::process();
+
+        app(HtmlAssets::class)
+            ->addScripts(static::scripts())
+            ->addJs(static::js())
+            ->addStylesheets(static::stylesheets())
+            ->addStyles(static::styles());
+
+        return new HtmlString(static::$html);
     }
 }
