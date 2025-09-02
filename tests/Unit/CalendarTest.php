@@ -17,7 +17,7 @@ class CalendarTest extends TestCase
         $scripts = app(HtmlAssets::class)->render();
 
         $this->assertStringContainsString('let _title = d.toLocaleTimeString(\'en-US\', {"timeStyle": "short"});', $scripts);
-        $this->assertStringContainsString('var calendar = new FullCalendar.Calendar(calendarEl,', $scripts);
-        $this->assertStringContainsString('initialView: (window.outerWidth > 400) ? \'dayGridMonth\' : \'timeGridDay\'', $scripts);
+        $this->assertStringContainsString('new FullCalendar.Calendar(calendarEl,', $scripts);
+        $this->assertStringContainsString('initialView: \'multiMonthThreeMonth\',', $scripts);
     }
 }
