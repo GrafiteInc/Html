@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.18.0] - 2025-09-06
+
+### Feature
+- general calendar improvements
+- html string element
+
+### Chore
+- proper permissions
+- update permissions
+
 ## [v1.17.2] - 2025-05-31
 
 ### Chore
