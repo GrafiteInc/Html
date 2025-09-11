@@ -7,6 +7,23 @@ use Grafite\Html\Tags\HtmlComponent;
 
 class Calendar extends HtmlComponent
 {
+    public static $initialView = 'dayGridMonth';
+    public static $dayOfWeekStart = 0;
+
+    public function initialView($value)
+    {
+        self::$initialView = $value;
+
+        return new static();
+    }
+
+    public function dayOfWeekStart($value)
+    {
+        self::$dayOfWeekStart = $value;
+
+        return new static();
+    }
+
     public static function scripts()
     {
         return [
@@ -17,6 +34,8 @@ class Calendar extends HtmlComponent
     public static function js()
     {
         $id = self::$id;
+        $initialView = self::$initialView;
+        $dayOfWeekStart = self::$dayOfWeekStart ?? 0;
         $windowId = Str::random();
         $items = json_encode(self::$items);
 
@@ -40,7 +59,7 @@ class Calendar extends HtmlComponent
                     eventSources: {$items},
                     selectable: true,
                     fixedWeekCount: false,
-                    initialView: 'multiMonthThreeMonth',
+                    initialView: '{$initialView}',
                     views: {
                         multiMonthThreeMonth: {
                             type: 'multiMonth',
@@ -72,7 +91,7 @@ class Calendar extends HtmlComponent
                         day: 'Day',
                         list: 'List'
                     },
-                    firstDay: 1,
+                    firstDay: {$dayOfWeekStart},
                     eventDidMount: function (info) {
                         // manipulating the event title
                         let titleEl = info.el.getElementsByClassName('fc-event-title')[0]
