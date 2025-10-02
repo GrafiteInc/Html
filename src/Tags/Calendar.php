@@ -34,7 +34,7 @@ class Calendar extends HtmlComponent
     public static function js()
     {
         $id = self::$id;
-        $initialView = self::$initialView;
+        $initialView = self::$initialView ?? 'dayGridMonth';
         $dayOfWeekStart = self::$dayOfWeekStart ?? 0;
         $windowId = Str::random();
         $items = json_encode(self::$items);

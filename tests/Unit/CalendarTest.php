@@ -18,6 +18,6 @@ class CalendarTest extends TestCase
 
         $this->assertStringContainsString('let _title = d.toLocaleTimeString(\'en-US\', {"timeStyle": "short"});', $scripts);
         $this->assertStringContainsString('new FullCalendar.Calendar(calendarEl,', $scripts);
-        $this->assertStringContainsString('initialView: \'multiMonthThreeMonth\',', $scripts);
+        $this->assertStringContainsString('initialView: \'dayGridMonth\',', $scripts);
     }
 }
