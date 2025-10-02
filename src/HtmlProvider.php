@@ -82,6 +82,7 @@ class HtmlProvider extends ServiceProvider
                 'breadcrumbs' => Components\Breadcrumbs::class,
                 'calendar' => Components\Calendar::class,
                 'card' => Components\Card::class,
+                'code' => Components\Code::class,
                 'action-dropdown' => Components\ActionDropdown::class,
                 'action-dropdown-group' => Components\ActionDropdownGroup::class,
                 'dropdown-item' => Components\DropdownItem::class,
