@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.19.0] - 2025-10-07
+
+### Fix
+- issue with initial calendar view
+
+### Feature
+- new code element
+- new admonition element
+- added more controls for Calendar
+
 ## [v1.18.0] - 2025-09-06
 
 ### Feature
