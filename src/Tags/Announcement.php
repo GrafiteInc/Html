@@ -10,6 +10,7 @@ class Announcement extends HtmlComponent
     public static $heading;
     public static $dismiss;
     public static $timeout;
+    public static $position;
 
     public static function background($value)
     {
@@ -21,6 +22,13 @@ class Announcement extends HtmlComponent
     public static function timeout($value)
     {
         self::$timeout = $value;
+
+        return new static();
+    }
+
+    public static function position($value)
+    {
+        self::$position = $value;
 
         return new static();
     }
@@ -55,11 +63,13 @@ class Announcement extends HtmlComponent
 
     public static function styles()
     {
+        $position = self::$position ?? 'top';
+
         return <<<CSS
             .html-announcement {
                 width: calc(100% - 30px);
                 left: 15px;
-                top: 15px;
+                $position: 15px;
                 position: fixed;
                 max-width: 100%;
                 z-index: 30000;
