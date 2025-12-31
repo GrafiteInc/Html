@@ -12,7 +12,7 @@ class AlertTest extends ComponentTestCase
 
         $blade = (string) $this->blade($template);
 
-        $this->assertStringContainsString('<button type="button" class="close float-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', $blade);
+        $this->assertStringContainsString('<button type="button" class="close float-right acknowledge-alert-btn" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', $blade);
         $this->assertStringContainsString('What?', $blade);
         $this->assertStringContainsString('alert-danger', $blade);
     }

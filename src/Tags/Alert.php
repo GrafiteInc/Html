@@ -50,15 +50,15 @@ class Alert extends HtmlComponent
         }
 
         if (self::$dismiss) {
-            $close = '<button type="button" class="close float-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            $close = '<button type="button" class="close float-right acknowledge-alert-btn" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 
             if (self::usingBootstrap5()) {
-                $close = '<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>';
+                $close = '<button type="button" class="btn-close float-end acknowledge-alert-btn" data-bs-dismiss="alert" aria-label="Close"></button>';
             }
         }
 
         self::$html = <<<html
-        <div class="alert {$class} w-100 position-fixed" role="alert">
+        <div class="alert {$class} position-fixed" role="alert">
             {$header}
             {$message}
             {$close}
