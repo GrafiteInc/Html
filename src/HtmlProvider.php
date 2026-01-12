@@ -85,6 +85,7 @@ class HtmlProvider extends ServiceProvider
                 'code' => Components\Code::class,
                 'action-dropdown' => Components\ActionDropdown::class,
                 'action-dropdown-group' => Components\ActionDropdownGroup::class,
+                'divider' => Components\Divider::class,
                 'dropdown-item' => Components\DropdownItem::class,
                 'dropdown-divider' => Components\DropdownDivider::class,
                 'dropdown-item-button' => Components\DropdownItemButton::class,
