@@ -94,7 +94,7 @@ class Calendar extends HtmlComponent
                     firstDay: {$dayOfWeekStart},
                     eventDidMount: function (info) {
                         // manipulating the event title
-                        let titleEl = info.el.getElementsByClassName('fc-event-title')[0]
+                        let titleEl = info.el.getElementsByClassName('fc-event-title')[0];
 
                         if (titleEl) {
                             // adding HTML
