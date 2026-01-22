@@ -53,7 +53,7 @@ class Popover extends HtmlComponent
 
         return <<<JS
             document.addEventListener('DOMContentLoaded', (event) => {
-                const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+                const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
                 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
                     html: true,
                     container: 'body',
