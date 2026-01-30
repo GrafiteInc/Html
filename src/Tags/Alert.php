@@ -2,33 +2,33 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Alert extends HtmlComponent
 {
     public static $background = 'info';
+
     public static $heading;
+
     public static $dismiss;
 
     public static function background($value)
     {
         self::$background = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function heading($value)
     {
         self::$heading = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function dismiss($state = true)
     {
         self::$dismiss = $state;
 
-        return new static();
+        return new static;
     }
 
     public static function process()

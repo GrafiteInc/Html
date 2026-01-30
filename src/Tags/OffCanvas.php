@@ -16,21 +16,21 @@ class OffCanvas extends HtmlComponent
     {
         self::$position = $position;
 
-        return new static();
+        return new static;
     }
 
     public static function backdrop($backdrop)
     {
         self::$backdrop = $backdrop;
 
-        return new static();
+        return new static;
     }
 
     public static function width($width)
     {
         self::$width = $width;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -40,7 +40,7 @@ class OffCanvas extends HtmlComponent
         $width = self::$width ?? '';
         $position = self::$position ?? 'end';
         $backdrop = self::$backdrop ?? 'true';
-        $id = self::$id ?? 'html_component_offcanvas_' . Str::uuid();
+        $id = self::$id ?? 'html_component_offcanvas_'.Str::uuid();
 
         if ($width) {
             $width = "style=\"width: {$width};\"";

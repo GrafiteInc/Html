@@ -3,49 +3,52 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class ImageCompare extends HtmlComponent
 {
     public static $imageA;
+
     public static $imageB;
+
     public static $width;
+
     public static $height;
+
     public static $color = 'var(--bs-primary)';
 
     public static function imageA($value)
     {
         self::$imageA = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function imageB($value)
     {
         self::$imageB = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function width($value)
     {
         self::$width = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function height($value)
     {
         self::$height = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function color($value)
     {
         self::$color = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -62,7 +65,7 @@ class ImageCompare extends HtmlComponent
     {
         $id = self::$id;
 
-        return <<<JS
+        return <<<'JS'
             document.addEventListener('DOMContentLoaded', (event) => {
                 function initComparisons() {
                     var x, i;
@@ -191,7 +194,7 @@ class ImageCompare extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $imageA = self::$imageA;

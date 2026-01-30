@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class CompilerTest extends ComponentTestCase
 {
-    public function testPlural()
+    public function test_plural()
     {
         $template = "@plural('banana')";
 
@@ -15,7 +15,7 @@ class CompilerTest extends ComponentTestCase
         $this->assertStringContainsString('bananas', $blade);
     }
 
-    public function testSingular()
+    public function test_singular()
     {
         $template = "@singular('bananas')";
 
@@ -24,7 +24,7 @@ class CompilerTest extends ComponentTestCase
         $this->assertStringContainsString('banana', $blade);
     }
 
-    public function testTitle()
+    public function test_title()
     {
         $template = "@title('bananas_are_handy')";
 
@@ -33,7 +33,7 @@ class CompilerTest extends ComponentTestCase
         $this->assertStringContainsString('Bananas Are Handy', $blade);
     }
 
-    public function testHeadline()
+    public function test_headline()
     {
         $template = "@headline('bananas_are_handy')";
 
@@ -42,7 +42,7 @@ class CompilerTest extends ComponentTestCase
         $this->assertStringContainsString('Bananas Are Handy', $blade);
     }
 
-    public function testLimit()
+    public function test_limit()
     {
         $template = "@limit('bananas_are_handy dont you agreee with me on this topic and overall I think we have many options')";
 

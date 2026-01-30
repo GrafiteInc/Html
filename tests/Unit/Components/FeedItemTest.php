@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class FeedItemTest extends ComponentTestCase
 {
-    public function testHtmlSlotRendering()
+    public function test_html_slot_rendering()
     {
-        $template = "<x-html-feed-item date=\"future\">Superman</x-html-feed-item>";
+        $template = '<x-html-feed-item date="future">Superman</x-html-feed-item>';
 
         $blade = (string) $this->blade($template);
 

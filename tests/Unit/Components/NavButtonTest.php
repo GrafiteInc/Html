@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class NavButtonTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-nav-button onClick=\"window.location = window.location\" content=\"Super\" />";
+        $template = '<x-html-nav-button onClick="window.location = window.location" content="Super" />';
 
         $blade = (string) $this->blade($template);
 

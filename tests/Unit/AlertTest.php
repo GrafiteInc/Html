@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\Alert;
+use Tests\TestCase;
 
 class AlertTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Alert::make()->text('Message for the many')->render();
         $this->assertStringContainsString('Message for the many', $html);

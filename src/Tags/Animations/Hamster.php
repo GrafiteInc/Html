@@ -8,7 +8,7 @@ class Hamster extends HtmlComponent
 {
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .wheel-and-hamster {
                 --dur: 1s;
                 position: relative;
@@ -286,7 +286,7 @@ class Hamster extends HtmlComponent
 
     public static function process()
     {
-        self::$html = <<<HTML
+        self::$html = <<<'HTML'
             <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
                 <div class="wheel"></div>
                 <div class="hamster">

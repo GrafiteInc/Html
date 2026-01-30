@@ -2,8 +2,8 @@
 
 namespace Grafite\Html\Components;
 
-use Illuminate\View\Component;
 use Grafite\Html\Tags\ListGroup as ListGroupTag;
+use Illuminate\View\Component;
 
 class ListGroup extends Component
 {
@@ -14,8 +14,7 @@ class ListGroup extends Component
      */
     public function __construct(
         public $items = [],
-    ) {
-    }
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

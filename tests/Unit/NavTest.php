@@ -2,18 +2,18 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
+use Grafite\Html\Tags\DropdownDivider;
+use Grafite\Html\Tags\DropdownItem;
+use Grafite\Html\Tags\DropdownItemButton;
 use Grafite\Html\Tags\Nav;
-use Grafite\Html\Tags\NavLink;
 use Grafite\Html\Tags\NavButton;
 use Grafite\Html\Tags\NavDropdown;
-use Grafite\Html\Tags\DropdownItem;
-use Grafite\Html\Tags\DropdownDivider;
-use Grafite\Html\Tags\DropdownItemButton;
+use Grafite\Html\Tags\NavLink;
+use Tests\TestCase;
 
 class NavTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Nav::make()->items([
             NavLink::make()

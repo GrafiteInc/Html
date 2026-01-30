@@ -2,8 +2,8 @@
 
 namespace Grafite\Html\Components;
 
-use Illuminate\View\Component;
 use Grafite\Html\Tags\NavLink as NavLinkTag;
+use Illuminate\View\Component;
 
 class NavLink extends Component
 {
@@ -15,8 +15,7 @@ class NavLink extends Component
     public function __construct(
         public $href = '',
         public $content = null
-    ) {
-    }
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

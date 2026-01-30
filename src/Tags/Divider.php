@@ -3,13 +3,12 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Divider extends HtmlComponent
 {
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .html-hr-text {
                 border: 0;
                 line-height: 1em;
@@ -43,7 +42,7 @@ class Divider extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
         $id = self::$id;
         $text = self::$text ?? '';
 

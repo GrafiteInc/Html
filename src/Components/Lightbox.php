@@ -2,13 +2,14 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Lightbox as LightboxTag;
 
 class Lightbox extends HtmlComponent
 {
     public $gallery;
+
     public $css;
+
     public $images = [];
 
     /**

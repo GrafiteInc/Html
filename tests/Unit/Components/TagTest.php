@@ -7,7 +7,7 @@ use Tests\ComponentTestCase;
 
 class TagTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-tag component='\Tests\Unit\TestHtmlComponent' />";
 

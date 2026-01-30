@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class AnimationTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-animation component='hamster' />";
 

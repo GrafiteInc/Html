@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class FeedTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-feed :items=\"[
             'today' => 'Yes man',
@@ -20,12 +20,12 @@ class FeedTest extends ComponentTestCase
         $this->assertStringContainsString('No man', $blade);
     }
 
-    public function testHtmlSlotRendering()
+    public function test_html_slot_rendering()
     {
-        $template = "<x-html-feed>
-            <x-html-feed-item date=\"future\">Superman</x-html-feed-item>
-            <x-html-feed-item date=\"yesterday\" content=\"Batman\" icon=\"<i class=\"fa fa-comment text-dark\"></i>\" />
-        </x-html-feed>";
+        $template = '<x-html-feed>
+            <x-html-feed-item date="future">Superman</x-html-feed-item>
+            <x-html-feed-item date="yesterday" content="Batman" icon="<i class="fa fa-comment text-dark"></i>" />
+        </x-html-feed>';
 
         $blade = (string) $this->blade($template);
 

@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class NavLinkTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-nav-link href=\"https://example.com\" content=\"Super\" />";
+        $template = '<x-html-nav-link href="https://example.com" content="Super" />';
 
         $blade = (string) $this->blade($template);
 

@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\Feed;
 use Grafite\Html\Tags\FeedItem;
+use Tests\TestCase;
 
 class FeedTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Feed::make()->items([
             FeedItem::make()->content('What a big event<br>Cannot believe how big a moment it was')->icon('<i class="fas fa-address-book"></i>', 'var(--bs-success)')->render(),

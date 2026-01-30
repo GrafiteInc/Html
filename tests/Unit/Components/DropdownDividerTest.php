@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class DropdownDividerTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-dropdown-divider />";
+        $template = '<x-html-dropdown-divider />';
 
         $blade = (string) $this->blade($template);
 

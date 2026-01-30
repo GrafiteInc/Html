@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class AlertTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-alert text='What?' background='danger' dismiss='true' />";
 

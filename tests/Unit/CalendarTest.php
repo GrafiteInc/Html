@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\HtmlAssets;
 use Grafite\Html\Tags\Calendar;
+use Tests\TestCase;
 
 class CalendarTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Calendar::make()->render();
 

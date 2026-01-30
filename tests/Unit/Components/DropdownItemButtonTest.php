@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class DropdownItemButtonTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-dropdown-item-button onClick=\"console.log()\">Test</x-html-dropdown-item-button>";
+        $template = '<x-html-dropdown-item-button onClick="console.log()">Test</x-html-dropdown-item-button>';
 
         $blade = (string) $this->blade($template);
 

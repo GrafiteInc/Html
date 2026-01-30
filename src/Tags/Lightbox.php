@@ -3,25 +3,25 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Lightbox extends HtmlComponent
 {
     public static $gallery;
+
     public static $thumbnailCss;
 
     public static function gallery($value)
     {
         self::$gallery = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function thumbnailCss($value)
     {
         self::$thumbnailCss = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -41,7 +41,7 @@ class Lightbox extends HtmlComponent
         $id = self::$id;
         $gallery = self::$gallery;
 
-        return <<<JS
+        return <<<'JS'
            document.addEventListener('DOMContentLoaded', (event) => {
                 refreshFsLightbox();
             });
@@ -50,15 +50,15 @@ class Lightbox extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
 
         CSS;
     }
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
-        self::$gallery = self::$gallery ?? 'lightbox_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
+        self::$gallery = self::$gallery ?? 'lightbox_'.Str::uuid();
 
         $id = self::$id;
         $html = '<div id="'.$id.'" class="lightbox-gallery">';

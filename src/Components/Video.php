@@ -2,13 +2,14 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Video as VideoTag;
 
 class Video extends HtmlComponent
 {
     public $type;
+
     public $poster;
+
     public $source;
 
     /**

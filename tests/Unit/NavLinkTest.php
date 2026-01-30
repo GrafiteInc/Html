@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\NavLink;
+use Tests\TestCase;
 
 class NavLinkTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = NavLink::make()
             ->text('Nav Link Website')

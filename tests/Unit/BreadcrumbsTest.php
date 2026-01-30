@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\Card;
 use Grafite\Html\Tags\Breadcrumbs;
+use Tests\TestCase;
 
 class BreadcrumbsTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Breadcrumbs::make()->items([
             'Batman' => 'https://batman.com',

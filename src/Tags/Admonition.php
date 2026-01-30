@@ -2,41 +2,42 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Admonition extends HtmlComponent
 {
     public static $body;
+
     public static $title;
+
     public static $icon;
+
     public static $color;
 
     public static function body($value)
     {
         self::$body = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function title($value)
     {
         self::$title = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function icon($value)
     {
         self::$icon = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function color($value)
     {
         self::$color = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()

@@ -2,33 +2,33 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Avatar extends HtmlComponent
 {
     public static $size;
+
     public static $image;
+
     public static $css;
 
     public static function size($value)
     {
         self::$size = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function image($value)
     {
         self::$image = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function css($value)
     {
         self::$css = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -48,7 +48,7 @@ html;
 
     public static function styles()
     {
-        return <<<styles
+        return <<<'styles'
 .html-component-avatar {
     width: 200px;
     height: 200px;

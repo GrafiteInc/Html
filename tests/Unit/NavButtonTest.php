@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\NavButton;
+use Tests\TestCase;
 
 class NavButtonTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = NavButton::make()
             ->text('Nav Button')

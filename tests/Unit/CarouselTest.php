@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\Card;
 use Grafite\Html\Tags\Carousel;
+use Tests\TestCase;
 
 class CarouselTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Carousel::make()->items(collect([
             '/location-of-image.jpg',

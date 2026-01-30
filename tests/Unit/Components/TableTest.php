@@ -6,15 +6,15 @@ use Tests\ComponentTestCase;
 
 class TableTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-table />";
+        $template = '<x-html-table />';
 
         $blade = (string) $this->blade($template);
 
         $this->assertStringContainsString('<table class="table"></table>', $blade);
 
-        $template = "<x-html-table class=\"table table-carded\" />";
+        $template = '<x-html-table class="table table-carded" />';
 
         $blade = (string) $this->blade($template);
 

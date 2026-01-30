@@ -3,11 +3,11 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\DropdownButton;
-use Grafite\Html\Components\HtmlComponent;
 
 class ActionDropdown extends HtmlComponent
 {
     public $actions;
+
     public $icon;
 
     /**

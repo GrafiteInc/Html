@@ -3,17 +3,23 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Modal as ModalTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Modal extends HtmlComponent
 {
     public $id;
+
     public $title;
+
     public $content;
+
     public $text;
+
     public $cssClass;
+
     public $footer;
+
     public $dismiss;
+
     public $static;
 
     public function __construct(
@@ -43,7 +49,7 @@ class Modal extends HtmlComponent
                 $this->content = (string) $data['slot'];
             }
 
-            $modal =  ModalTag::make()
+            $modal = ModalTag::make()
                 ->id($this->id)
                 ->content($this->content)
                 ->title($this->title)

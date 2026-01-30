@@ -2,8 +2,6 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class DropdownItem extends HtmlComponent
 {
     public static function process()

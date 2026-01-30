@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\DropdownItem;
 use Grafite\Html\Tags\DropdownButton;
+use Grafite\Html\Tags\DropdownItem;
+use Tests\TestCase;
 
 class DropdownButtonTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = DropdownButton::make()
             ->items([
@@ -22,7 +22,7 @@ class DropdownButtonTest extends TestCase
         $this->assertStringContainsString('<a class="btn dropdown-toggle btn-info" href="#" role="button" ', $html);
     }
 
-    public function testHtmlRenderingAlignment()
+    public function test_html_rendering_alignment()
     {
         $html = DropdownButton::make()
             ->items([

@@ -2,8 +2,6 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class SortTextWithIcon extends HtmlComponent
 {
     public static $field;
@@ -12,7 +10,7 @@ class SortTextWithIcon extends HtmlComponent
     {
         self::$field = $field;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -34,7 +32,7 @@ class SortTextWithIcon extends HtmlComponent
 
     public static function styles()
     {
-        return <<<styles
+        return <<<'styles'
             .html-component-pointer {
                 cursor: pointer;
             }

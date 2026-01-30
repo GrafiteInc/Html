@@ -2,12 +2,12 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Text as TextTag;
 
 class Text extends HtmlComponent
 {
     public $text;
+
     public $effect;
 
     /**

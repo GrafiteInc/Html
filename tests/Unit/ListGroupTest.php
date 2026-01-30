@@ -2,14 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\Card;
 use Grafite\Html\Tags\ListGroup;
-use Grafite\Html\Tags\Breadcrumbs;
+use Tests\TestCase;
 
 class ListGroupTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = ListGroup::make()->items([
             'Batman' => 'https://batman.com',

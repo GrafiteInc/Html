@@ -2,14 +2,16 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Tilt as TiltTag;
 
 class Tilt extends HtmlComponent
 {
     public $content;
+
     public $startX;
+
     public $startY;
+
     public $glare;
 
     /**

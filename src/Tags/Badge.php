@@ -3,46 +3,49 @@
 namespace Grafite\Html\Tags;
 
 use PUGX\Poser\Poser;
-use Grafite\Html\Tags\HtmlComponent;
 use PUGX\Poser\Render\SvgFlatRender;
-use PUGX\Poser\Render\SvgPlasticRender;
 use PUGX\Poser\Render\SvgFlatSquareRender;
 use PUGX\Poser\Render\SvgForTheBadgeRenderer;
+use PUGX\Poser\Render\SvgPlasticRender;
 
 class Badge extends HtmlComponent
 {
     public static $name;
+
     public static $status;
+
     public static $color;
+
     public static $theme;
+
     public static $icon;
 
     public static function name($value)
     {
         self::$name = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function status($value)
     {
         self::$status = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function color($value)
     {
         self::$color = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function theme($value)
     {
         self::$theme = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -53,13 +56,13 @@ class Badge extends HtmlComponent
         $theme = self::$theme;
 
         if (! in_array($theme, ['flat', 'flat-square', 'for-the-badge', 'plastic'])) {
-            throw new \Exception("Error Processing Theme", 1);
+            throw new \Exception('Error Processing Theme', 1);
         }
 
-        $flat = new SvgFlatRender();
-        $plastic = new SvgPlasticRender();
-        $flatSquare = new SvgFlatSquareRender();
-        $forTheBadge = new SvgForTheBadgeRenderer();
+        $flat = new SvgFlatRender;
+        $plastic = new SvgPlasticRender;
+        $flatSquare = new SvgFlatSquareRender;
+        $forTheBadge = new SvgForTheBadgeRenderer;
 
         $poser = new Poser([
             $flat,

@@ -2,44 +2,45 @@
 
 namespace Grafite\Html\Tags;
 
-use Illuminate\Support\Str;
-use Grafite\Html\Tags\SortTextWithIcon;
 use Illuminate\Database\Eloquent\Model;
-use Grafite\Html\Tags\HtmlComponent;
+use Illuminate\Support\Str;
 
 class Table extends HtmlComponent
 {
     public static $collection;
+
     public static $keys;
+
     public static $sortable = null;
+
     public static $headers;
 
     public static function collection($value)
     {
         self::$collection = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function keys($value)
     {
         self::$keys = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function sortable($value)
     {
         self::$sortable = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function headers($value)
     {
         self::$headers = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -58,7 +59,7 @@ class Table extends HtmlComponent
                 $keys = collect($collection->first()->getAttributes())->keys();
             }
 
-            $body = $collection->map(function ($item) use ($keys, $collection) {
+            $body = $collection->map(function ($item) use ($keys) {
                 $attributes = '';
 
                 foreach ($keys as $key) {
@@ -121,7 +122,6 @@ class Table extends HtmlComponent
             }
 
             $class = (collect($headers)->last() === $item) ? 'class="text-right"' : '';
-
 
             return "<th ${class}>${headerValue}</th>";
         })->implode('');

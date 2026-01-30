@@ -3,41 +3,43 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Parallax extends HtmlComponent
 {
     public static $image;
+
     public static $scale;
+
     public static $delay;
+
     public static $orientation;
 
     public static function image($value)
     {
         self::$image = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function scale($value)
     {
         self::$scale = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function delay($value)
     {
         self::$delay = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function orientation($value)
     {
         self::$orientation = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -71,14 +73,14 @@ class Parallax extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
 
         CSS;
     }
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $image = self::$image;

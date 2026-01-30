@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\Image;
+use Tests\TestCase;
 
 class ImageTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Image::make()->source('https://example.com/picture.jpg')->thumbnail()->render();
         $this->assertStringContainsString('<img  class="img-thumbnail" src="https://example.com/picture.jpg" alt="" />', $html);

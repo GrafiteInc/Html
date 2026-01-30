@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class OffcanvasTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-offcanvas id=\"Superman_Panel\">Hello World</x-html-offcanvas>";
+        $template = '<x-html-offcanvas id="Superman_Panel">Hello World</x-html-offcanvas>';
 
         $blade = (string) $this->blade($template);
 

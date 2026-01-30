@@ -2,16 +2,20 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Lottie as LottieTag;
 
 class Lottie extends HtmlComponent
 {
     public $icon;
+
     public $image;
+
     public $trigger;
+
     public $speed;
+
     public $color;
+
     public $stroke;
 
     /**

@@ -3,13 +3,12 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class DropdownButtonGroup extends HtmlComponent
 {
     public static function process()
     {
-        $id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        $id = static::$attributes['id'] ?? 'html_'.Str::uuid();
         $css = self::$css;
         $menuCss = self::$menuCss;
         $text = self::$text;

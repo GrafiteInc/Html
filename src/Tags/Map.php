@@ -3,29 +3,34 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Map extends HtmlComponent
 {
     public static $marker;
+
     public static $center = [36.668419, -41.176225];
+
     public static $bubbles;
+
     public static $zoom = 3;
+
     public static $maxZoom = 16;
+
     public static $minZoom = 16;
+
     public static $skin = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 
     public static function skin($value)
     {
         self::$skin = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function bubbles($array)
     {
         foreach ($array as $bubble) {
-            $var = 'bubbles_' . Str::random();
+            $var = 'bubbles_'.Str::random();
             $x = $bubble['x'];
             $y = $bubble['y'];
             $color = $bubble['color'] ?? 'var(--bs-primary)';
@@ -51,41 +56,40 @@ class Map extends HtmlComponent
             }
         }
 
-        return new static();
+        return new static;
     }
-
 
     public static function zoom($value)
     {
         self::$zoom = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function maxZoom($value)
     {
         self::$maxZoom = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function minZoom($value)
     {
         self::$minZoom = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function center($x, $y)
     {
         self::$center = [$x, $y];
 
-        return new static();
+        return new static;
     }
 
     public static function marker($x, $y, $tooltip = null, $click = null)
     {
-        $var = 'marker_' . Str::random();
+        $var = 'marker_'.Str::random();
 
         self::$marker = "var {$var} = L.marker([{$x}, {$y}]).addTo(map);";
 
@@ -97,7 +101,7 @@ class Map extends HtmlComponent
             self::$marker .= " {$var}.on('click', function () { {$click}; });";
         }
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -142,7 +146,7 @@ class Map extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .leaflet-map {
                 min-height: 400px;
             }
@@ -151,7 +155,7 @@ class Map extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
 

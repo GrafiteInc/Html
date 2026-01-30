@@ -2,49 +2,51 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Announcement extends HtmlComponent
 {
     public static $background = 'info';
+
     public static $heading;
+
     public static $dismiss;
+
     public static $timeout;
+
     public static $position;
 
     public static function background($value)
     {
         self::$background = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function timeout($value)
     {
         self::$timeout = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function position($value)
     {
         self::$position = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function heading($value)
     {
         self::$heading = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function dismiss($state = true)
     {
         self::$dismiss = $state;
 
-        return new static();
+        return new static;
     }
 
     public static function js()

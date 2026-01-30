@@ -2,13 +2,14 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Progress as ProgressTag;
 
 class Progress extends HtmlComponent
 {
     public $now;
+
     public $min;
+
     public $max;
 
     /**

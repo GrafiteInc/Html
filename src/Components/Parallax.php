@@ -2,15 +2,18 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Parallax as ParallaxTag;
 
 class Parallax extends HtmlComponent
 {
     public $image;
+
     public $css;
+
     public $scale;
+
     public $delay;
+
     public $orientation;
 
     /**

@@ -2,13 +2,13 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Tags\NavLink;
 use Grafite\Html\Tags\Nav as NavTag;
-use Grafite\Html\Components\HtmlComponent;
+use Grafite\Html\Tags\NavLink;
 
 class Nav extends HtmlComponent
 {
     public $items;
+
     public $type;
 
     /**

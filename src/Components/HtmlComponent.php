@@ -7,13 +7,21 @@ use Illuminate\View\Component;
 class HtmlComponent extends Component
 {
     public $id;
+
     public $css;
+
     public $url;
+
     public $text;
+
     public $html;
+
     public $onClick;
+
     public $menuCss;
+
     public $items = [];
+
     public $attributes = [];
 
     public function __contruct(
@@ -26,12 +34,9 @@ class HtmlComponent extends Component
         $menuCss = null,
         $items = [],
         $attributes = []
-    ) {
-    }
+    ) {}
 
-    public function render()
-    {
-    }
+    public function render() {}
 
     protected function setDefaultProperties(
         $id,

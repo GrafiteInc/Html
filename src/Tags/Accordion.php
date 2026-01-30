@@ -2,9 +2,7 @@
 
 namespace Grafite\Html\Tags;
 
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Accordion extends HtmlComponent
 {
@@ -14,7 +12,7 @@ class Accordion extends HtmlComponent
     {
         self::$show = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -42,7 +40,7 @@ HTML;
             if (is_array($originalValue)) {
                 $value = '<ul>';
                 $value .= collect($originalValue)->map(function ($string) {
-                    return '<li>' . Str::of($string)->title() . '</li>';
+                    return '<li>'.Str::of($string)->title().'</li>';
                 })->implode(' ');
                 $value .= '</ul>';
             }

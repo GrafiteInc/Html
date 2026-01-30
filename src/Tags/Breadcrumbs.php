@@ -2,14 +2,11 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Breadcrumbs extends HtmlComponent
 {
     public static function process()
     {
         $steps = self::processLinks(self::$items);
-
 
         self::$html = <<<html
         <nav aria-label="breadcrumb">

@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class ListGroupTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-list-group :items=\"[
             'Title' => 'https://example.com',
@@ -19,12 +19,12 @@ class ListGroupTest extends ComponentTestCase
         $this->assertStringContainsString('<a href="https://example.com" class="list-group-item list-group-item-action">Title</a>', $blade);
     }
 
-    public function testHtmlSlotRendering()
+    public function test_html_slot_rendering()
     {
-        $template = "<x-html-list-group>
-            <x-html-list-group-item href=\"https://example.com\">Title</x-html-list-group-item>
-            <x-html-list-group-item href=\"https://batman.com\" content=\"Batman\" />
-        </x-html-list-group>";
+        $template = '<x-html-list-group>
+            <x-html-list-group-item href="https://example.com">Title</x-html-list-group-item>
+            <x-html-list-group-item href="https://batman.com" content="Batman" />
+        </x-html-list-group>';
 
         $blade = (string) $this->blade($template);
 

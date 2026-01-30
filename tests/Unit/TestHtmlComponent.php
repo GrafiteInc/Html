@@ -13,7 +13,7 @@ class TestHtmlComponent extends HtmlTagComponent
 
     public static function styles()
     {
-        return <<<styles
+        return <<<'styles'
             .html-component-overlay {
                 display: none;
             }
@@ -22,7 +22,7 @@ class TestHtmlComponent extends HtmlTagComponent
 
     public static function js()
     {
-        return <<<scripts
+        return <<<'scripts'
             window.showOverlay = () => {
                 console.log('overlay-function');
             }

@@ -4,7 +4,6 @@ namespace Grafite\Html\Tags;
 
 use Exception;
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Text extends HtmlComponent
 {
@@ -14,7 +13,7 @@ class Text extends HtmlComponent
     {
         self::$effect = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -25,7 +24,7 @@ class Text extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js'
+            '//cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js',
         ];
     }
 
@@ -35,7 +34,7 @@ class Text extends HtmlComponent
         $effect = self::$effect;
 
         if (! in_array($effect, ['fade', 'drop-in', 'roll-in', 'fall-in'])) {
-            throw new Exception("Invalid Effect.", 1);
+            throw new Exception('Invalid Effect.', 1);
         }
 
         if ($effect === 'fade') {
@@ -144,14 +143,14 @@ class Text extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
 
         CSS;
     }
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $text = self::$text;

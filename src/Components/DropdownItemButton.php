@@ -3,11 +3,11 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\DropdownItemButton as ButtonTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class DropdownItemButton extends HtmlComponent
 {
     public $text;
+
     public $onClick;
 
     public function __construct(

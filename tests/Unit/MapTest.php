@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\Map;
 use Grafite\Html\HtmlAssets;
+use Grafite\Html\Tags\Map;
+use Tests\TestCase;
 
 class MapTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Map::make()
             ->center(43.981739, -80.735542)

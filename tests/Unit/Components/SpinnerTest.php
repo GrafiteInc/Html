@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class SpinnerTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-spinner />";
+        $template = '<x-html-spinner />';
 
         $blade = (string) $this->blade($template);
 

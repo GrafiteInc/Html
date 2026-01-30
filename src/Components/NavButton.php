@@ -2,8 +2,8 @@
 
 namespace Grafite\Html\Components;
 
-use Illuminate\View\Component;
 use Grafite\Html\Tags\NavButton as NavButtonTag;
+use Illuminate\View\Component;
 
 class NavButton extends Component
 {
@@ -16,8 +16,7 @@ class NavButton extends Component
         public $onClick = '',
         public $css = '',
         public $content = null
-    ) {
-    }
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

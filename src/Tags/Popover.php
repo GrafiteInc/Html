@@ -2,41 +2,42 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Popover extends HtmlComponent
 {
     public static $title;
+
     public static $css;
+
     public static $trigger;
+
     public static $content;
 
     public static function title($value)
     {
         self::$title = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function css($value)
     {
         self::$css = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function trigger($value)
     {
         self::$trigger = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function content($value)
     {
         self::$content = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function js()
@@ -49,7 +50,7 @@ class Popover extends HtmlComponent
             $hide = 2000;
         }
 
-        $content = str_replace("\n", "", self::$content ?? '');
+        $content = str_replace("\n", '', self::$content ?? '');
 
         return <<<JS
             document.addEventListener('DOMContentLoaded', (event) => {
@@ -67,7 +68,7 @@ class Popover extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
 
         CSS;
     }

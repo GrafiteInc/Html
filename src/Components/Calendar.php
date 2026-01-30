@@ -3,11 +3,11 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Calendar as CalendarTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Calendar extends HtmlComponent
 {
     public $initialView;
+
     public $dayOfWeekStart;
 
     public function __construct(

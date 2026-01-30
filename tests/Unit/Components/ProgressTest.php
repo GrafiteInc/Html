@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class ProgressTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-progress min=\"0\" max=\"100\" now=\"25\" />";
+        $template = '<x-html-progress min="0" max="100" now="25" />';
 
         $blade = (string) $this->blade($template);
 

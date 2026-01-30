@@ -4,25 +4,26 @@ namespace Grafite\Html\Tags;
 
 use Exception;
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Carousel extends HtmlComponent
 {
     public static function process()
     {
-        $id = self::$id ?? 'html_carousel_' . Str::uuid() . '_';
+        $id = self::$id ?? 'html_carousel_'.Str::uuid().'_';
 
         if (! Str::of(get_class(self::$items))->contains('Collection')) {
-            throw new Exception("Items must be a collection.", 1);
+            throw new Exception('Items must be a collection.', 1);
         }
 
         $indicators = self::$items->map(function ($item, $key) use ($id) {
             $active = ($key === 1) ? 'active' : '';
+
             return "<button data-target=\"#${id}Indicators\" data-bs-target=\"#${id}Indicators\" data-slide-to=\"${key}\" data-bs-slide-to=\"${key}\" class=\"{$active}\"></button>";
         })->implode("\n");
 
         $items = self::$items->map(function ($item, $key) {
             $active = ($key === 1) ? ' active' : '';
+
             return "<div class=\"carousel-item{$active}\"><img src=\"{$item}\" class=\"d-block w-100\"></div>";
         })->implode("\n");
 

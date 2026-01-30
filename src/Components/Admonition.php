@@ -3,13 +3,15 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Admonition as AdmonitionTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Admonition extends HtmlComponent
 {
     public $body;
+
     public $title;
+
     public $icon;
+
     public $color;
 
     public function __construct(

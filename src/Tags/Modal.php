@@ -3,49 +3,52 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Modal extends HtmlComponent
 {
     public static $title;
+
     public static $content;
+
     public static $footer;
+
     public static $dismiss;
+
     public static $isStatic;
 
     public static function content($value)
     {
         self::$content = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function isStatic()
     {
         self::$isStatic = true;
 
-        return new static();
+        return new static;
     }
 
     public static function footer($value)
     {
         self::$footer = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function title($value)
     {
         self::$title = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function dismiss()
     {
         self::$dismiss = true;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -57,7 +60,7 @@ class Modal extends HtmlComponent
         $text = self::$text ?? '';
         $content = self::$content ?? '';
         $static = (self::$isStatic) ? 'data-backdrop="static" data-bs-backdrop="static"' : '';
-        $id = self::$id ?? 'html_component_modal_' . Str::uuid();
+        $id = self::$id ?? 'html_component_modal_'.Str::uuid();
 
         if (self::usingBootstrap5()) {
             // $class = "bg-{$bg}";
@@ -79,7 +82,7 @@ class Modal extends HtmlComponent
             $footerContent = "<div class=\"modal-footer\">{$footer}</div>";
         }
 
-        self::$html =  <<<html
+        self::$html = <<<html
 <button type="button" class="btn {$css}" data-toggle="modal" data-target="#{$id}" data-bs-toggle="modal" data-bs-target="#{$id}">
   $text
 </button>

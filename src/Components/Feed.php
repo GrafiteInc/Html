@@ -2,9 +2,9 @@
 
 namespace Grafite\Html\Components;
 
-use Illuminate\View\Component;
-use Grafite\Html\Tags\FeedItem;
 use Grafite\Html\Tags\Feed as FeedTag;
+use Grafite\Html\Tags\FeedItem;
+use Illuminate\View\Component;
 
 class Feed extends Component
 {

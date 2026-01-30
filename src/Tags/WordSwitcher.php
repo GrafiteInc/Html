@@ -2,14 +2,14 @@
 
 namespace Grafite\Html\Tags;
 
-use Exception;
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class WordSwitcher extends HtmlComponent
 {
     public static $duration;
+
     public static $delay;
+
     public static $random;
 
     public static function stylesheets()
@@ -26,21 +26,21 @@ class WordSwitcher extends HtmlComponent
     {
         self::$duration = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function delay($value)
     {
         self::$delay = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function random($value)
     {
         self::$random = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function js()
@@ -163,7 +163,7 @@ class WordSwitcher extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .html-word-switcher-enter-active, .html-word-switcher-leave-active {
                 transition: opacity 1s;
             }
@@ -176,7 +176,7 @@ class WordSwitcher extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $text = self::$text;

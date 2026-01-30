@@ -2,65 +2,69 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Image extends HtmlComponent
 {
     public static $thumbnail = false;
+
     public static $fluid = false;
+
     public static $placeholder = false;
+
     public static $lazy = false;
+
     public static $css = '';
+
     public static $alt = '';
+
     public static $source;
 
     public static function css($value)
     {
         self::$css = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function alt($value)
     {
         self::$alt = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function source($value)
     {
         self::$source = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function thumbnail()
     {
         self::$thumbnail = true;
 
-        return new static();
+        return new static;
     }
 
     public static function lazy()
     {
         self::$lazy = true;
 
-        return new static();
+        return new static;
     }
 
     public static function placeholder()
     {
         self::$placeholder = true;
 
-        return new static();
+        return new static;
     }
 
     public static function fluid()
     {
         self::$fluid = true;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -76,11 +80,11 @@ class Image extends HtmlComponent
         }
 
         if (self::$thumbnail) {
-            $class .= " img-thumbnail";
+            $class .= ' img-thumbnail';
         }
 
         if (self::$fluid) {
-            $class .= " img-fluid";
+            $class .= ' img-fluid';
         }
 
         if (self::$placeholder) {
@@ -94,12 +98,12 @@ class Image extends HtmlComponent
             $html .= '</div>';
         }
 
-         self::$html = $html;
+        self::$html = $html;
     }
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .html-placeholder {
                 background: #555;
                 border-radius: 8px;

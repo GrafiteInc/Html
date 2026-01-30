@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class AccordionTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Accordion::make()->items([
             'Who is me' => 'What is the long term of this and that?',

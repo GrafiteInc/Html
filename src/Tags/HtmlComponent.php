@@ -2,28 +2,37 @@
 
 namespace Grafite\Html\Tags;
 
-use ReflectionClass;
-use ReflectionProperty;
-use Illuminate\Support\Str;
 use Grafite\Html\HtmlAssets;
 use Illuminate\Support\HtmlString;
+use Illuminate\Support\Str;
+use ReflectionClass;
+use ReflectionProperty;
 
 class HtmlComponent
 {
     public static $id;
+
     public static $css;
+
     public static $url;
+
     public static $text;
+
     public static $html;
+
     public static $onClick;
+
     public static $menuCss;
+
     public static $items = [];
+
     public static $attributes = [];
+
     public static $data = [];
 
     public static function make()
     {
-        $properties = (new ReflectionClass(new static()))
+        $properties = (new ReflectionClass(new static))
             ->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);
 
         foreach ($properties as $property) {
@@ -34,42 +43,42 @@ class HtmlComponent
         self::$items = [];
         self::$attributes = [];
 
-        return new static();
+        return new static;
     }
 
     public static function onClick($onClick)
     {
         self::$onClick = $onClick;
 
-        return new static();
+        return new static;
     }
 
     public static function items($items)
     {
         self::$items = $items;
 
-        return new static();
+        return new static;
     }
 
     public static function css($css)
     {
         self::$css = $css;
 
-        return new static();
+        return new static;
     }
 
     public static function menuCss($css)
     {
         self::$menuCss = $css;
 
-        return new static();
+        return new static;
     }
 
     public static function url($url)
     {
         self::$url = $url;
 
-        return new static();
+        return new static;
     }
 
     public static function id($id)
@@ -78,28 +87,28 @@ class HtmlComponent
 
         self::$attributes = array_merge(['id' => $id], self::$attributes);
 
-        return new static();
+        return new static;
     }
 
     public static function text($text)
     {
         self::$text = $text;
 
-        return new static();
+        return new static;
     }
 
     public static function attributes($attributes)
     {
         self::$attributes = $attributes;
 
-        return new static();
+        return new static;
     }
 
     public static function data($data)
     {
         self::$data = $data;
 
-        return new static();
+        return new static;
     }
 
     public static function renderWhen($callback)
@@ -170,7 +179,7 @@ class HtmlComponent
 
         foreach ($attributesGroup as $key => $value) {
             if (! empty($value)) {
-                $attributes .= ' ' . self::attributeElement($key, $value);
+                $attributes .= ' '.self::attributeElement($key, $value);
             }
         }
 
@@ -188,11 +197,11 @@ class HtmlComponent
         }
 
         if (is_array($value) && $key === 'class') {
-            return 'class="' . implode(' ', $value) . '"';
+            return 'class="'.implode(' ', $value).'"';
         }
 
         if (! is_null($value)) {
-            return $key . '="' . e($value, false) . '"';
+            return $key.'="'.e($value, false).'"';
         }
     }
 

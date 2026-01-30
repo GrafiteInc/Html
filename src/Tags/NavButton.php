@@ -2,8 +2,6 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class NavButton extends HtmlComponent
 {
     public static function process()
@@ -18,7 +16,7 @@ class NavButton extends HtmlComponent
 
         $attributes = self::processAttributes([
             'onclick' => self::$onClick,
-            'class' => 'nav-link ' . $class
+            'class' => 'nav-link '.$class,
         ]);
 
         $active = (request()->url() === self::$url) ? ' active' : '';

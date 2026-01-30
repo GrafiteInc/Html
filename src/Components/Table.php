@@ -3,14 +3,17 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Table as TableTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Table extends HtmlComponent
 {
     public $class;
+
     public $collection;
+
     public $keys;
+
     public $sortable;
+
     public $headers;
 
     public function __construct(

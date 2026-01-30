@@ -2,33 +2,33 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Progress extends HtmlComponent
 {
     public static $now;
+
     public static $min;
+
     public static $max;
 
     public static function now($value)
     {
         self::$now = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function min($value)
     {
         self::$min = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function max($value)
     {
         self::$max = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()

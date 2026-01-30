@@ -3,16 +3,21 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Image as ImageTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Image extends HtmlComponent
 {
     public $thumbnail = false;
+
     public $lazy = false;
+
     public $fluid = false;
+
     public $placeholder = false;
+
     public $css = '';
+
     public $alt = '';
+
     public $source;
 
     public function __construct(

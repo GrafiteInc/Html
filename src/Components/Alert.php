@@ -3,12 +3,13 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Alert as AlertTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Alert extends HtmlComponent
 {
     public $background = 'info';
+
     public $heading;
+
     public $dismiss;
 
     public function __construct(

@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\Card;
+use Tests\TestCase;
 
 class CardTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Card::make()->body('Welcome to our awesome website.')->render();
         $this->assertStringContainsString('Welcome to our awesome website', $html);

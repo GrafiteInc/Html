@@ -8,7 +8,7 @@ class Typewriter extends HtmlComponent
 {
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .typewriter {
             --blue: #5C86FF;
             --blue-dark: #275EFE;
@@ -246,7 +246,7 @@ class Typewriter extends HtmlComponent
 
     public static function process()
     {
-        self::$html = <<<HTML
+        self::$html = <<<'HTML'
             <div class="typewriter">
                 <div class="slide"><i></i></div>
                 <div class="paper"></div>

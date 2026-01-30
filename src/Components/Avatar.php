@@ -3,12 +3,13 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Avatar as AvatarTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Avatar extends HtmlComponent
 {
     public $size;
+
     public $image;
+
     public $css;
 
     public function __construct(

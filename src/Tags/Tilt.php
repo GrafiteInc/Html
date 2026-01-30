@@ -3,41 +3,43 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Tilt extends HtmlComponent
 {
     public static $content;
+
     public static $startX = 20;
+
     public static $startY = -20;
+
     public static $glare = 'false';
 
     public static function content($value)
     {
         self::$content = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function startX($value)
     {
         self::$startX = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function startY($value)
     {
         self::$startY = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function glare($value)
     {
         self::$glare = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -75,7 +77,7 @@ class Tilt extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .tilt-container {
                 display: inline-block;
                 filter: drop-shadow(0 6mm 4mm rgba(0, 0, 0, 0.4));
@@ -85,7 +87,7 @@ class Tilt extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $content = self::$content;

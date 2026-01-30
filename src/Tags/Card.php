@@ -2,44 +2,48 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Card extends HtmlComponent
 {
     public static $body;
+
     public static $title;
+
     public static $header;
+
     public static $footer;
+
     public static $imageSrc;
+
     public static $imageAlt;
+
     public static $shadow = 'shadow-sm';
 
     public static function body($value)
     {
         self::$body = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function title($value)
     {
         self::$title = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function header($value)
     {
         self::$header = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function footer($value)
     {
         self::$footer = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function image($value, $alt = null)
@@ -47,14 +51,14 @@ class Card extends HtmlComponent
         self::$imageSrc = $value;
         self::$imageAlt = $alt;
 
-        return new static();
+        return new static;
     }
 
     public static function shadow($value)
     {
         self::$shadow = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()

@@ -3,13 +3,15 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Badge as BadgeTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Badge extends HtmlComponent
 {
     public $name;
+
     public $status;
+
     public $color;
+
     public $theme;
 
     public function __construct(

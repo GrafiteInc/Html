@@ -2,9 +2,7 @@
 
 namespace Grafite\Html\Tags;
 
-use Exception;
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Countdown extends HtmlComponent
 {
@@ -14,7 +12,7 @@ class Countdown extends HtmlComponent
     {
         self::$time = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -85,14 +83,14 @@ class Countdown extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
 
         CSS;
     }
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
 

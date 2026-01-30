@@ -3,34 +3,34 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Video extends HtmlComponent
 {
     public static $type;
+
     public static $source;
+
     public static $poster;
 
     public static function type($value)
     {
         self::$type = $value;
 
-        return new static();
+        return new static;
     }
-
 
     public static function source($value)
     {
         self::$source = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function poster($value)
     {
         self::$poster = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -60,14 +60,14 @@ class Video extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
 
         CSS;
     }
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $type = self::$type;

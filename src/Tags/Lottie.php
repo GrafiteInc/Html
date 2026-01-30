@@ -3,57 +3,61 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Lottie extends HtmlComponent
 {
     public static $image;
+
     public static $icon;
+
     public static $speed;
+
     public static $trigger;
+
     public static $color;
+
     public static $stroke;
 
     public static function image($value)
     {
         self::$image = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function trigger($value)
     {
         self::$trigger = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function color($value)
     {
         self::$color = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stroke($value)
     {
         self::$stroke = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function speed($value)
     {
         self::$speed = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function icon($value)
     {
         self::$icon = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function stylesheets()
@@ -146,7 +150,7 @@ class Lottie extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
         $speed = self::$speed;

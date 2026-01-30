@@ -2,7 +2,6 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\NavDropdown as NavDropdownTag;
 
 class NavDropdown extends HtmlComponent

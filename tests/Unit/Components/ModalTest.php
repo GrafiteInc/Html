@@ -6,16 +6,16 @@ use Tests\ComponentTestCase;
 
 class ModalTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-modal
-            id=\"SupermanModal\"
-            title=\"Modal Test\"
-            :dismiss=\"true\"
-            :static=\"true\"
+        $template = '<x-html-modal
+            id="SupermanModal"
+            title="Modal Test"
+            :dismiss="true"
+            :static="true"
         >
             Hello World
-        </x-html-modal>";
+        </x-html-modal>';
 
         $blade = (string) $this->blade($template);
 

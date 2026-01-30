@@ -2,15 +2,18 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\WordSwitcher as WordSwitcherTag;
 
 class WordSwitcher extends HtmlComponent
 {
     public $items;
+
     public $css;
+
     public $duration;
+
     public $delay;
+
     public $random;
 
     /**

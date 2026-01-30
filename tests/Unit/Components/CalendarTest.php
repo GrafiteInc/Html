@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Components;
 
-use Tests\ComponentTestCase;
 use Illuminate\Support\Carbon;
+use Tests\ComponentTestCase;
 
 class CalendarTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $items = collect([
             [
@@ -24,9 +24,9 @@ class CalendarTest extends ComponentTestCase
                         'content' => 'A couple days later',
                         'start' => Carbon::parse('02-08-2023'),
                         'allDay' => true,
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ]);
 
         $template = "<x-html-calendar :items=\"$items\" />";

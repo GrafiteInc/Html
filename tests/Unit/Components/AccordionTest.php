@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class AccordionTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-accordion :items=\"['who' => 'batman', 'what' => 'superman']\" />";
 

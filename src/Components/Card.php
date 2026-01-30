@@ -3,16 +3,21 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Card as CardTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Card extends HtmlComponent
 {
     public $body;
+
     public $title;
+
     public $header;
+
     public $footer;
+
     public $imageSrc;
+
     public $imageAlt;
+
     public $shadow;
 
     public function __construct(

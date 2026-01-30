@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\Card;
 use Grafite\Html\Tags\Modal;
+use Tests\TestCase;
 
 class ModalTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = Modal::make()
             ->text('Modal Yo')

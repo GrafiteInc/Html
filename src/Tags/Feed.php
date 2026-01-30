@@ -2,8 +2,6 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Feed extends HtmlComponent
 {
     public static $borderColor;
@@ -12,7 +10,7 @@ class Feed extends HtmlComponent
     {
         self::$borderColor = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()

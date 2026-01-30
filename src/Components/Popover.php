@@ -2,14 +2,16 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Popover as PopoverTag;
 
 class Popover extends HtmlComponent
 {
     public $title;
+
     public $css;
+
     public $trigger;
+
     public $content;
 
     /**

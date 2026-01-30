@@ -32,18 +32,17 @@ class MakeGlobalComponentCommand extends BaseCommand
      */
     protected function getStub()
     {
-        return __DIR__ . '/stubs/global-component.stub';
+        return __DIR__.'/stubs/global-component.stub';
     }
 
     /**
      * Get the default namespace for the class.
      *
-     * @param string $rootNamespace
-     *
+     * @param  string  $rootNamespace
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . '\View\Components\Global';
+        return $rootNamespace.'\View\Components\Global';
     }
 }

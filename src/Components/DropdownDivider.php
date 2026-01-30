@@ -3,7 +3,6 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\DropdownDivider as DividerTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class DropdownDivider extends HtmlComponent
 {

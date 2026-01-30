@@ -2,25 +2,24 @@
 
 namespace Grafite\Html\Tags;
 
-use Grafite\Html\Tags\HtmlComponent;
-
 class Rating extends HtmlComponent
 {
     public static $value;
+
     public static $max;
 
     public static function max($value)
     {
         self::$max = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function value($value)
     {
         self::$value = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()

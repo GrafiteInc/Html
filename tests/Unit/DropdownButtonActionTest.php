@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\DropdownItemButton;
 use Grafite\Html\Tags\DropdownButtonAction;
+use Grafite\Html\Tags\DropdownItemButton;
+use Tests\TestCase;
 
 class DropdownButtonActionTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = DropdownButtonAction::make()
             ->items([

@@ -6,9 +6,9 @@ use Tests\ComponentTestCase;
 
 class DropdownItemTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-dropdown-item url=\"somewhere.com\">Linky</x-html-dropdown-item>";
+        $template = '<x-html-dropdown-item url="somewhere.com">Linky</x-html-dropdown-item>';
 
         $blade = (string) $this->blade($template);
 

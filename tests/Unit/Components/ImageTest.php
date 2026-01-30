@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class ImageTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-image with-placeholder source='https://somewhere.com/picture.jpg' fluid thumbnail alt='What!' />";
 

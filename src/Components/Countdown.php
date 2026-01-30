@@ -2,7 +2,6 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\Countdown as CountdownTag;
 
 class Countdown extends HtmlComponent

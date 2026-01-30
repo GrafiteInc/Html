@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use Grafite\Html\Tags\NavBar;
 use Grafite\Html\Tags\NavLink;
+use Tests\TestCase;
 
 class NavBarTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = NavBar::make()->items([
             NavLink::make()

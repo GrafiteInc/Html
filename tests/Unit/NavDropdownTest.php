@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\NavDropdown;
 use Grafite\Html\Tags\DropdownItem;
+use Grafite\Html\Tags\NavDropdown;
+use Tests\TestCase;
 
 class NavDropdownTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = NavDropdown::make()
             ->items([

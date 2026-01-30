@@ -3,11 +3,11 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Code as CodeTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Code extends HtmlComponent
 {
     public $body = null;
+
     public $language = 'php';
 
     public function __construct(

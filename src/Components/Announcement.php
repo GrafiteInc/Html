@@ -3,14 +3,17 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\Announcement as AnnouncementTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class Announcement extends HtmlComponent
 {
     public $background = 'info';
+
     public $heading;
+
     public $dismiss;
+
     public $timeout;
+
     public $position;
 
     public function __construct(

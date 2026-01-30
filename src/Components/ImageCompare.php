@@ -2,15 +2,18 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\ImageCompare as ImageCompareTag;
 
 class ImageCompare extends HtmlComponent
 {
     public $imageA;
+
     public $imageB;
+
     public $width;
+
     public $height;
+
     public $color;
 
     /**

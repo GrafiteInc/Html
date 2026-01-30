@@ -6,7 +6,7 @@ use Tests\TestCase;
 
 class TableTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = \Grafite\Html\Tags\Table::make()->sortable('window.app.processFilters')->headers(['employee number' => 'id', 'title' => 'job', 'Name' => 'name', 'Actions' => null])->collection(collect([
             (object) ['id' => 1, 'job' => 'bar', 'name' => 'baz', 'actions' => '<button class="btn btn-sm btn-info">Now</button>'],

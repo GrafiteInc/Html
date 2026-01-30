@@ -3,25 +3,25 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class Calendar extends HtmlComponent
 {
     public static $initialView = 'dayGridMonth';
+
     public static $dayOfWeekStart = 0;
 
     public function initialView($value)
     {
         self::$initialView = $value;
 
-        return new static();
+        return new static;
     }
 
     public function dayOfWeekStart($value)
     {
         self::$dayOfWeekStart = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function scripts()
@@ -123,7 +123,7 @@ class Calendar extends HtmlComponent
 
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             @media (prefers-color-scheme: light) {
                 :root {
                     --app-fc-weekend: var(--bs-gray-200);
@@ -175,7 +175,7 @@ class Calendar extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_' . Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
 
         $id = self::$id;
 

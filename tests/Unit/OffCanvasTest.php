@@ -2,14 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Grafite\Html\Tags\Card;
-use Grafite\Html\Tags\Modal;
 use Grafite\Html\Tags\OffCanvas;
+use Tests\TestCase;
 
 class OffCanvasTest extends TestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $html = OffCanvas::make()
             ->text('OffCanvas Yo')

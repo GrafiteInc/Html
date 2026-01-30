@@ -3,11 +3,11 @@
 namespace Grafite\Html\Components;
 
 use Grafite\Html\Tags\DropdownItem as ItemTag;
-use Grafite\Html\Components\HtmlComponent;
 
 class DropdownItem extends HtmlComponent
 {
     public $url;
+
     public $text;
 
     public function __construct($url = null, $text = null)

@@ -3,7 +3,6 @@
 namespace Grafite\Html\Tags;
 
 use Illuminate\Support\Str;
-use Grafite\Html\Tags\HtmlComponent;
 
 class NavBar extends HtmlComponent
 {
@@ -13,7 +12,7 @@ class NavBar extends HtmlComponent
     {
         self::$brand = $value;
 
-        return new static();
+        return new static;
     }
 
     public static function process()
@@ -21,17 +20,17 @@ class NavBar extends HtmlComponent
         $class = '';
 
         if (self::$css) {
-            $class = " $class " . self::$css;
+            $class = " $class ".self::$css;
         }
 
         $brand = self::$brand ?? '';
 
         if (! self::$id) {
-            $id = 'html_' . Str::uuid();
+            $id = 'html_'.Str::uuid();
         }
 
         $attributes = self::processAttributes([
-            'class' => trim('navbar ' . $class),
+            'class' => trim('navbar '.$class),
         ]);
 
         $links = collect(self::$items)->implode("\n");

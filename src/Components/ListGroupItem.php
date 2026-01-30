@@ -11,9 +11,7 @@ class ListGroupItem extends Component
      *
      * @return void
      */
-    public function __construct(public $href, public $content = null)
-    {
-    }
+    public function __construct(public $href, public $content = null) {}
 
     /**
      * Get the view / contents that represent the component.
@@ -34,7 +32,7 @@ class ListGroupItem extends Component
             }
 
             return "<a href=\"{$this->href}\" class=\"list-group-item list-group-item-action{$active}\">{$this->content}</a>\n";
-            ;
+
         };
     }
 }

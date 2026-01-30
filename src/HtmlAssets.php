@@ -2,8 +2,8 @@
 
 namespace Grafite\Html;
 
-use MatthiasMullie\Minify\JS;
 use MatthiasMullie\Minify\CSS;
+use MatthiasMullie\Minify\JS;
 
 class HtmlAssets
 {
@@ -33,13 +33,13 @@ class HtmlAssets
     /**
      * Add field stylesheets to a form
      *
-     * @param array $stylesheets
+     * @param  array  $stylesheets
      * @return self
      */
     public function addStylesheets($stylesheets)
     {
         foreach ($stylesheets as $sheet) {
-            $this->stylesheets[] = '<link href="' . $sheet . '" rel="stylesheet">';
+            $this->stylesheets[] = '<link href="'.$sheet.'" rel="stylesheet">';
         }
 
         return $this;
@@ -48,13 +48,13 @@ class HtmlAssets
     /**
      * Add field scripts to a form
      *
-     * @param array $scripts
+     * @param  array  $scripts
      * @return self
      */
     public function addScripts($scripts)
     {
         foreach ($scripts as $script) {
-            $this->scripts[] = '<script src="' . $script . '"></script>';
+            $this->scripts[] = '<script src="'.$script.'"></script>';
         }
 
         return $this;
@@ -63,7 +63,7 @@ class HtmlAssets
     /**
      * Add field Styles code to a form
      *
-     * @param string $styles
+     * @param  string  $styles
      * @return self
      */
     public function addStyles($styles)
@@ -78,7 +78,7 @@ class HtmlAssets
     /**
      * Add field JS code to a form
      *
-     * @param string $js
+     * @param  string  $js
      * @return self
      */
     public function addJs($js)
@@ -92,7 +92,7 @@ class HtmlAssets
 
     protected function compileStyles($type, $nonce)
     {
-        $nonce = $nonce ? ' nonce="' . $nonce . '"' : '';
+        $nonce = $nonce ? ' nonce="'.$nonce.'"' : '';
         $output = '';
 
         if (in_array($type, ['all', 'styles'])) {
@@ -100,7 +100,7 @@ class HtmlAssets
             $styles = collect($this->styles)->unique()->implode("\n");
 
             if (app()->environment('production')) {
-                $minifierCSS = new CSS();
+                $minifierCSS = new CSS;
                 $styles = $minifierCSS->add($styles)->minify();
             }
 
@@ -112,7 +112,7 @@ class HtmlAssets
 
     protected function compileScripts($type, $nonce)
     {
-        $nonce = $nonce ? ' nonce="' . $nonce . '"' : '';
+        $nonce = $nonce ? ' nonce="'.$nonce.'"' : '';
         $output = '';
 
         if (in_array($type, ['all', 'scripts'])) {
@@ -120,7 +120,7 @@ class HtmlAssets
             $js = collect($this->js)->unique()->implode("\n");
 
             if (app()->environment('production')) {
-                $minifierJS = new JS();
+                $minifierJS = new JS;
                 $js = $minifierJS->add($js)->minify();
             }
 

@@ -2,8 +2,8 @@
 
 namespace Grafite\Html\Components;
 
-use Illuminate\View\Component;
 use Grafite\Html\Tags\Accordion as AccordionTag;
+use Illuminate\View\Component;
 
 class Accordion extends Component
 {
@@ -14,9 +14,7 @@ class Accordion extends Component
      *
      * @return void
      */
-    public function __construct(public $items)
-    {
-    }
+    public function __construct(public $items) {}
 
     /**
      * Get the view / contents that represent the component.

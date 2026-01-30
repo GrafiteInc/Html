@@ -2,16 +2,20 @@
 
 namespace Grafite\Html\Components;
 
-use Grafite\Html\Components\HtmlComponent;
 use Grafite\Html\Tags\OffCanvas as OffCanvasTag;
 
 class Offcanvas extends HtmlComponent
 {
     public $title;
+
     public $cssClass;
+
     public $id;
+
     public $position;
+
     public $width;
+
     public $backdrop;
 
     /**

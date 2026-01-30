@@ -8,7 +8,7 @@ class Spaceman extends HtmlComponent
 {
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             @keyframes snow {
             0% {
                 opacity: 0;
@@ -341,7 +341,7 @@ class Spaceman extends HtmlComponent
 
     public static function process()
     {
-        self::$html = <<<HTML
+        self::$html = <<<'HTML'
             <div class="box-of-star1">
                 <div class="star star-position1"></div>
                 <div class="star star-position2"></div>

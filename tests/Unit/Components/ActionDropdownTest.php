@@ -6,12 +6,12 @@ use Tests\ComponentTestCase;
 
 class ActionDropdownTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
-        $template = "<x-html-action-dropdown>
-            <x-html-dropdown-item-button onClick=\"console.log()\">Test</x-html-dropdown-item-button>
-            <x-html-dropdown-item-button onClick=\"console.warning()\">Big</x-html-dropdown-item-button>
-        </x-html-action-dropdown>";
+        $template = '<x-html-action-dropdown>
+            <x-html-dropdown-item-button onClick="console.log()">Test</x-html-dropdown-item-button>
+            <x-html-dropdown-item-button onClick="console.warning()">Big</x-html-dropdown-item-button>
+        </x-html-action-dropdown>';
 
         $blade = (string) $this->blade($template);
 
@@ -19,7 +19,7 @@ class ActionDropdownTest extends ComponentTestCase
         $this->assertStringContainsString('Big', $blade);
     }
 
-    public function testHtmlRenderingWithActions()
+    public function test_html_rendering_with_actions()
     {
         $template = '<x-html-action-dropdown :actions="[\'cool\', \'stuff\']"></x-html-action-dropdown>';
 

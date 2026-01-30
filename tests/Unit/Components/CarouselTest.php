@@ -6,7 +6,7 @@ use Tests\ComponentTestCase;
 
 class CarouselTest extends ComponentTestCase
 {
-    public function testHtmlRendering()
+    public function test_html_rendering()
     {
         $template = "<x-html-carousel :items=\"collect([
             'https://i.picsum.photos/id/464/200/300.jpg?hmac=M4MNTPYELJRy0vZcT-h-EWmXkPdnXHvF9ufEPkhDt2g',

@@ -8,7 +8,7 @@ class Pulse extends HtmlComponent
 {
     public static function styles()
     {
-        return <<<CSS
+        return <<<'CSS'
             .pulse-loading svg polyline {
                 fill: none;
                 stroke-width: 3;
@@ -43,7 +43,7 @@ class Pulse extends HtmlComponent
 
     public static function process()
     {
-        self::$html = <<<HTML
+        self::$html = <<<'HTML'
             <div class="pulse-loading">
             <svg width="64px" height="48px">
                 <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
