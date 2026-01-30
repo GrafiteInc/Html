@@ -111,6 +111,7 @@ class HtmlProvider extends ServiceProvider
                     'video' => Components\Video::class,
                     'image-compare' => Components\ImageCompare::class,
                     'parallax' => Components\Parallax::class,
+                    'marquee' => Components\Marquee::class,
                     'lottie' => Components\Lottie::class,
                     'lightbox' => Components\Lightbox::class,
                     'word-switcher' => Components\WordSwitcher::class,
