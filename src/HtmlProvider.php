@@ -115,6 +115,7 @@ class HtmlProvider extends ServiceProvider
                     'lottie' => Components\Lottie::class,
                     'lightbox' => Components\Lightbox::class,
                     'word-switcher' => Components\WordSwitcher::class,
+                    'status' => Components\Status::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
