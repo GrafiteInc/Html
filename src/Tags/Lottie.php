@@ -68,7 +68,7 @@ class Lottie extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js',
+            '//cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie.min.js',
         ];
     }
 

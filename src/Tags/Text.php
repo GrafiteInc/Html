@@ -24,7 +24,7 @@ class Text extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js',
+            '//cdn.jsdelivr.net/npm/animejs@4.3.6/lib/anime.min.js',
         ];
     }
 

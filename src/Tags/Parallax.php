@@ -50,7 +50,7 @@ class Parallax extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/simple-parallax-js@6.2.1/dist/vanilla/simpleParallaxVanilla.umd.min.js',
+            '//cdn.jsdelivr.net/npm/simple-parallax-js@6.3.3/dist/vanilla/simpleParallaxVanilla.umd.min.js',
         ];
     }
 
