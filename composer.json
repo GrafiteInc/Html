@@ -14,13 +14,13 @@
         }
     ],
     "require": {
-        "php": ">=7.3|>=8.0",
+        "php": ">=8.2",
         "doctrine/dbal": "^2.5|^3.0",
-        "illuminate/support": "^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/view": "^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/database": "^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/view": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
         "matthiasmullie/minify": "^1.3",
-        "illuminate/collections": "^8.78|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/collections": "^11.0|^12.0|^13.0",
         "badges/poser": "^3.1",
         "tempest/highlight": "^2.13"
     },
@@ -29,7 +29,7 @@
         "laravel/pint": "^1.10",
         "mockery/mockery": "^1.0",
         "mikey179/vfsstream": "^1.6",
-        "orchestra/testbench": "^5.0|^6.0|7.0|^8.0|^9.0|^10.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
         "nunomaduro/phpinsights": "^2.0"
     },
     "autoload": {
