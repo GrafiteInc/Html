@@ -24,7 +24,7 @@ class Text extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/animejs@4.3.6/lib/anime.min.js',
+            '//cdn.jsdelivr.net/npm/animejs@4.3.6/dist/bundles/anime.umd.min.js',
         ];
     }
 
@@ -43,16 +43,14 @@ class Text extends HtmlComponent
                     var textWrapper = document.querySelector('#{$id}');
                         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-                    anime.timeline({
+                    anime.createTimeline({
                         loop: false
-                    }).add({
-                        targets: '#{$id} .letter',
+                    }).add('#{$id} .letter', {
                         opacity: [0,1],
                         easing: "easeInOutQuad",
                         duration: 2250,
                         delay: (el, i) => 150 * (i+1)
-                    }).add({
-                        targets: '#{$id}',
+                    }).add('#{$id}', {
                         opacity: 100,
                         duration: 1000,
                         easing: "easeOutExpo",
@@ -65,21 +63,20 @@ class Text extends HtmlComponent
         if ($effect === 'drop-in') {
             return <<<JS
             document.addEventListener('DOMContentLoaded', (event) => {
+
                 var textWrapper = document.querySelector('#{$id}');
                     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter d-inline-block'>$&</span>");
 
-                    anime.timeline({
+                    anime.createTimeline({
                         loop: false
-                    }).add({
-                        targets: '#{$id} .letter',
+                    }).add('#{$id} .letter', {
                         scale: [4,1],
                         opacity: [0,1],
                         translateZ: 0,
                         easing: "easeOutExpo",
                         duration: 950,
                         delay: (el, i) => 70*i
-                    }).add({
-                        targets: '#{$id}',
+                    }).add('#{$id}', {
                         opacity: 100,
                         duration: 1000,
                         easing: "easeOutExpo",
@@ -95,16 +92,14 @@ class Text extends HtmlComponent
                 var textWrapper = document.querySelector('#{$id}');
                     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter d-inline-block'>$&</span>");
 
-                    anime.timeline({
+                    anime.createTimeline({
                         loop: false
-                    }).add({
-                        targets: '#{$id} .letter',
+                    }).add('#{$id} .letter', {
                         translateY: ["1.1em", 0],
                         translateZ: 0,
                         duration: 750,
                         delay: (el, i) => 50 * i
-                    }).add({
-                        targets: '#{$id}',
+                    }).add('#{$id}', {
                         opacity: 100,
                         duration: 1000,
                         easing: "easeOutExpo",
@@ -121,20 +116,18 @@ class Text extends HtmlComponent
                     textWrapper.parentNode.classList.add('overflow-y-hidden');
                     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter d-inline-block'>$&</span>");
 
-                    anime.timeline({
+                    anime.createTimeline({
                         loop: false
-                    }).add({
-                        targets: '#{$id} .letter',
-                        translateY: [-100,0],
-                        easing: "easeOutExpo",
+                    }).add('#{$id} .letter', {
+                        translateY: ['-100px', '0px'],
+                        easing: "outExpo",
                         duration: 1400,
                         delay: (el, i) => 60 * i
-                    }).add({
-                        targets: '#{$id}',
+                    }, 0).add('#{$id}', {
                         opacity: 100,
                         duration: 1000,
-                        easing: "easeOutExpo",
-                        delay: 1000
+                        easing: "outExpo",
+                        delay: 0
                     });
                 });
             JS;
