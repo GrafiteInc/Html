@@ -117,6 +117,7 @@ class HtmlProvider extends ServiceProvider
                     'word-switcher' => Components\WordSwitcher::class,
                     'status' => Components\Status::class,
                     'hero' => Components\Hero::class,
+                    'github-graph' => Components\GithubGraph::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
