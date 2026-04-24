@@ -206,9 +206,7 @@ class GithubGraph extends HtmlComponent
 
         $options['targetId'] = $id;
 
-        if (self::$eventType !== null) {
-            $options['eventType'] = self::$eventType;
-        }
+        $options['eventType'] = self::$eventType ?? 'gradient';
 
         if (self::$title !== null) {
             $options['title'] = self::$title;
