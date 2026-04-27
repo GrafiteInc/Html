@@ -1,0 +1,29 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "![Grafite HTML](GrafiteHtml-banner.png)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test:visual": "npx playwright test",
+    "test:visual:update": "npx playwright test --update-snapshots",
+    "test:visual:ui": "npx playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrafiteInc/Html.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GrafiteInc/Html/issues"
+  },
+  "homepage": "https://github.com/GrafiteInc/Html#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

@@ -27,7 +27,7 @@ html;
                 $active = ' active';
             }
 
-            $steps .= "<li class=\"breadcrumb-item${active}\"><a href=\"{$link}\">{$title}</a></li>\n";
+            $steps .= "<li class=\"breadcrumb-item{$active}\"><a href=\"{$link}\">{$title}</a></li>\n";
         }
 
         return $steps;

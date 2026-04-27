@@ -559,6 +559,10 @@ class GithubGraph extends HtmlComponent
             document.addEventListener('DOMContentLoaded', function() {
                 new GithubContributions_{$id}({$jsonOptions});
             });
+
+            if (document.readyState !== 'loading') {
+                new GithubContributions_{$id}({$jsonOptions});
+            }
         JS;
     }
 
