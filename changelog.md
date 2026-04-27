@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.22.1] - 2026-04-27
+
+### Feature
+- added new playwright tests
+- github graph component
+- new background animations
+
+### Fix
+- event issue
+
 ## [v1.22.0] - 2026-04-07
 
 ### Feature
