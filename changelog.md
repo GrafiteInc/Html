@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.23.0] - 2026-06-23
+
+### Feature
+- backgrounds, buttons, and more
+
+### Refactor
+- performance improvements
+
 ## [v1.22.1] - 2026-04-27
 
 ### Feature
