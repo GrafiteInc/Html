@@ -96,8 +96,8 @@ class HtmlAssets
         $output = '';
 
         if (in_array($type, ['all', 'styles'])) {
-            $output .= collect($this->stylesheets)->unique()->implode("\n");
-            $styles = collect($this->styles)->unique()->implode("\n");
+            $output .= implode("\n", array_unique($this->stylesheets));
+            $styles = implode("\n", array_unique($this->styles));
 
             if (app()->environment('production')) {
                 $minifierCSS = new CSS;
@@ -116,8 +116,8 @@ class HtmlAssets
         $output = '';
 
         if (in_array($type, ['all', 'scripts'])) {
-            $output .= collect($this->scripts)->unique()->implode("\n");
-            $js = collect($this->js)->unique()->implode("\n");
+            $output .= implode("\n", array_unique($this->scripts));
+            $js = implode("\n", array_unique($this->js));
 
             if (app()->environment('production')) {
                 $minifierJS = new JS;

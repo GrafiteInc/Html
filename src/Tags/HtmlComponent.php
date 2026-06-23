@@ -4,7 +4,6 @@ namespace Grafite\Html\Tags;
 
 use Grafite\Html\HtmlAssets;
 use Illuminate\Support\HtmlString;
-use Illuminate\Support\Str;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -30,13 +29,38 @@ class HtmlComponent
 
     public static $data = [];
 
+    /**
+     * Cache of resettable property names keyed by class. Class definitions
+     * never change at runtime, so the reflection scan only runs once per
+     * component class instead of on every make() call.
+     *
+     * @var array<string, array<int, string>>
+     */
+    protected static $propertyCache = [];
+
     public static function make()
     {
-        $properties = (new ReflectionClass(new static))
-            ->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);
+        $class = static::class;
 
-        foreach ($properties as $property) {
-            $propertyName = $property->getName();
+        if (! isset(static::$propertyCache[$class])) {
+            $names = [];
+
+            $properties = (new ReflectionClass($class))
+                ->getProperties(ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED);
+
+            foreach ($properties as $property) {
+                $name = $property->getName();
+
+                // Never reset our own cache, it would defeat the purpose.
+                if ($name !== 'propertyCache') {
+                    $names[] = $name;
+                }
+            }
+
+            static::$propertyCache[$class] = $names;
+        }
+
+        foreach (static::$propertyCache[$class] as $propertyName) {
             static::$$propertyName = null;
         }
 
@@ -148,7 +172,7 @@ class HtmlComponent
 
     public static function usingBootstrap5()
     {
-        return Str::of(config('html.bootstrap-version'))->startsWith('5');
+        return str_starts_with((string) config('html.bootstrap-version'), '5');
     }
 
     public static function stylesheets()
