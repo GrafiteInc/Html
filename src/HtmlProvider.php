@@ -118,6 +118,11 @@ class HtmlProvider extends ServiceProvider
                     'status' => Components\Status::class,
                     'hero' => Components\Hero::class,
                     'github-graph' => Components\GithubGraph::class,
+                    'confetti' => Components\Confetti::class,
+                    'light-bar' => Components\LightBar::class,
+                    'gradient-background' => Components\GradientBackground::class,
+                    'magnetic-button' => Components\MagneticButton::class,
+                    'grid-pattern' => Components\GridPattern::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');

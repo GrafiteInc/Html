@@ -503,5 +503,44 @@ function getComponentDefinitions(): array
                 ->items(['World', 'Earth', 'Globe', 'Planet'])
                 ->render();
         },
+
+        'confetti' => function () {
+            return \Grafite\Html\Tags\Confetti::make()
+                ->id('visual-confetti')
+                ->trigger('click')
+                ->content('<button class="btn btn-primary">Celebrate</button>')
+                ->render();
+        },
+
+        'light-bar' => function () {
+            return \Grafite\Html\Tags\LightBar::make()
+                ->id('visual-light-bar')
+                ->color('#3b82f6')
+                ->content('<div class="p-5 text-center"><h1>Light Bar</h1></div>')
+                ->render();
+        },
+
+        'gradient-background' => function () {
+            return \Grafite\Html\Tags\GradientBackground::make()
+                ->id('visual-gradient-background')
+                ->animate(true)
+                ->content('<div class="p-5 text-center text-white"><h1>Gradient Background</h1></div>')
+                ->render();
+        },
+
+        'magnetic-button' => function () {
+            return \Grafite\Html\Tags\MagneticButton::make()
+                ->id('visual-magnetic-button')
+                ->css('btn btn-primary btn-lg')
+                ->content('Magnetic')
+                ->render();
+        },
+
+        'grid-pattern' => function () {
+            return \Grafite\Html\Tags\GridPattern::make()
+                ->id('visual-grid-pattern')
+                ->content('<div class="p-5 text-center"><h1>Grid Pattern</h1></div>')
+                ->render();
+        },
     ];
 }
