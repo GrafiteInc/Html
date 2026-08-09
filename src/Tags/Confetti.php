@@ -188,7 +188,7 @@ class Confetti extends HtmlComponent
 
     public static function process()
     {
-        self::$id = static::$attributes['id'] ?? 'html_'.Str::uuid();
+        self::$id = static::$attributes['id'] ?? 'html_'.str_replace('-', '_', Str::uuid());
 
         $id = self::$id;
         $css = self::$css ?? '';

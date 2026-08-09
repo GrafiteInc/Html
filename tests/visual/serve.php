@@ -542,5 +542,70 @@ function getComponentDefinitions(): array
                 ->content('<div class="p-5 text-center"><h1>Grid Pattern</h1></div>')
                 ->render();
         },
+
+        'kbd' => function () {
+            return \Grafite\Html\Tags\Kbd::make()->text('Ctrl')->size('lg')->render()
+                . ' + '
+                . \Grafite\Html\Tags\Kbd::make()->text('C')->size('lg')->render();
+        },
+
+        'skeleton' => function () {
+            return \Grafite\Html\Tags\Skeleton::make()
+                ->width('12rem')
+                ->height('12rem')
+                ->rounded('circle')
+                ->render()
+                . '<br><br>'
+                . \Grafite\Html\Tags\Skeleton::make()
+                    ->width('20rem')
+                    ->height('1rem')
+                    ->animation('wave')
+                    ->render();
+        },
+
+        'swap' => function () {
+            return \Grafite\Html\Tags\Swap::make()
+                ->id('visual-swap')
+                ->css('btn btn-outline-secondary btn-lg')
+                ->rotate(true)
+                ->on('<i class="fa-solid fa-sun"></i>')
+                ->off('<i class="fa-solid fa-moon"></i>')
+                ->render();
+        },
+
+        'gauge' => function () {
+            return \Grafite\Html\Tags\Gauge::make()
+                ->id('visual-gauge')
+                ->value(75)
+                ->min(0)
+                ->max(120)
+                ->label('Temperature')
+                ->unit('°C')
+                ->thresholds([
+                    ['from' => 60, 'color' => 'warning'],
+                    ['from' => 90, 'color' => 'danger'],
+                ])
+                ->render();
+        },
+
+        'sparkline' => function () {
+            return \Grafite\Html\Tags\Sparkline::make()
+                ->data([3, 7, 4, 9, 6, 11, 8, 5, 10])
+                ->color('success')
+                ->area(true)
+                ->showDot(true)
+                ->render();
+        },
+
+        'dock' => function () {
+            return \Grafite\Html\Tags\Dock::make()
+                ->id('visual-dock')
+                ->items([
+                    ['label' => 'Home', 'href' => '#', 'icon' => '<i class="fa-solid fa-house"></i>', 'active' => true],
+                    ['label' => 'Search', 'href' => '#', 'icon' => '<i class="fa-solid fa-magnifying-glass"></i>'],
+                    ['label' => 'Settings', 'href' => '#', 'icon' => '<i class="fa-solid fa-gear"></i>'],
+                ])
+                ->render();
+        },
     ];
 }

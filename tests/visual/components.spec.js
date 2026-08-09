@@ -25,6 +25,10 @@ const staticComponents = [
     'spinner',
     'status',
     'table',
+    'kbd',
+    'skeleton',
+    'gauge',
+    'sparkline',
 ];
 
 for (const component of staticComponents) {
@@ -62,6 +66,8 @@ const jsComponents = [
     'popover',
     'rating',
     'word-switcher',
+    'swap',
+    'dock',
 ];
 
 for (const component of jsComponents) {

@@ -123,6 +123,12 @@ class HtmlProvider extends ServiceProvider
                     'gradient-background' => Components\GradientBackground::class,
                     'magnetic-button' => Components\MagneticButton::class,
                     'grid-pattern' => Components\GridPattern::class,
+                    'kbd' => Components\Kbd::class,
+                    'skeleton' => Components\Skeleton::class,
+                    'swap' => Components\Swap::class,
+                    'gauge' => Components\Gauge::class,
+                    'sparkline' => Components\Sparkline::class,
+                    'dock' => Components\Dock::class,
                 ] as $alias => $component
             ) {
                 $blade->component($component, $alias, 'html');
