@@ -122,8 +122,10 @@ class GithubGraph extends HtmlComponent
             .github-contrib table {
                 padding: 10px;
                 border-radius: 2px;
-                outline: 1px solid var(--color-border-default, #d1d9e0);
+                outline: none;
+                border-spacing: 3px;
                 outline-offset: -1px;
+                border-collapse: separate;
             }
             .github-contrib th {
                 font-size: 12px;
@@ -135,22 +137,21 @@ class GithubGraph extends HtmlComponent
                 line-height: 10px;
             }
             .github-contrib td {
-                width: 10px;
+                width: 14px;
             }
             .github-contrib td.label {
                 padding-right: 4px;
                 font-size: 12px;
                 font-weight: 400;
-                color: var(--color-fg-default, black);
                 text-align: left;
                 fill: var(--color-fg-default, black);
             }
             .github-contrib .grid {
-                fill: var(--color-calendar-graph-day-bg, #ebedf0);
+                fill: var(--color-calendar-graph-day-bg, var(--bs-tertiary-bg));
                 shape-rendering: geometricPrecision;
-                background-color: var(--color-calendar-graph-day-bg, #ebedf0);
+                background-color: var(--color-calendar-graph-day-bg, var(--bs-tertiary-bg));
                 border-radius: 2px;
-                outline: 1px solid var(--color-calendar-graph-day-border, rgba(27, 31, 35, 0.06));
+                /* outline: 1px solid var(--color-calendar-graph-day-border, rgba(27, 31, 35, 0.06)); */
                 outline-offset: -1px;
                 cursor: pointer;
                 user-select: none;
@@ -486,7 +487,7 @@ class GithubGraph extends HtmlComponent
                                 } else {
                                     div.innerHTML = data ? "1" : "No";
                                 }
-                                div.innerHTML += " events on " + date.toLocaleString('default', { month: 'long' }) + " " + nthNumber(date.getDate());
+                                div.innerHTML += " event" + (data > 1 ? "s" : "") + " on " + date.toLocaleString('default', { month: 'long' }) + " " + nthNumber(date.getDate());
                                 this.append(div);
                             });
                             td.addEventListener('mouseleave', function() {
@@ -559,10 +560,6 @@ class GithubGraph extends HtmlComponent
             document.addEventListener('DOMContentLoaded', function() {
                 new GithubContributions_{$id}({$jsonOptions});
             });
-
-            if (document.readyState !== 'loading') {
-                new GithubContributions_{$id}({$jsonOptions});
-            }
         JS;
     }
 
