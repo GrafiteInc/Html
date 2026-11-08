@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ----
 
+## [v1.25.1] - 2026-11-08
+
+### Build(composer)!
+- drop Illuminate 11 and PHPUnit 10 support
+
 ## [v1.25.0] - 2026-11-08
 
 ### Feat(tags)!
