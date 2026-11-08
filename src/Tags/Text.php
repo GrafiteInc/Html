@@ -24,7 +24,7 @@ class Text extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/animejs@4.3.6/dist/bundles/anime.umd.min.js',
+            '//cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js',
         ];
     }
 

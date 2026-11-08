@@ -24,10 +24,20 @@ class Calendar extends HtmlComponent
         return new static;
     }
 
+    public static function stylesheets()
+    {
+        return [
+            '//cdn.jsdelivr.net/npm/fullcalendar@7.1.4/skeleton.css',
+            '//cdn.jsdelivr.net/npm/fullcalendar@7.1.4/themes/classic/theme.css',
+            '//cdn.jsdelivr.net/npm/fullcalendar@7.1.4/themes/classic/palette.css',
+        ];
+    }
+
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js',
+            '//cdn.jsdelivr.net/npm/fullcalendar@7.1.4/all/global.js',
+            '//cdn.jsdelivr.net/npm/fullcalendar@7.1.4/themes/classic/global.js',
         ];
     }
 
@@ -51,11 +61,19 @@ class Calendar extends HtmlComponent
                     end: 'prev,next'
                 };
 
+                let _dayClass = function (info) {
+                    return [
+                        info.isOther ? 'app-fc-day-other' : '',
+                        info.isPast ? 'app-fc-day-past' : '',
+                        (info.dow === 0 || info.dow === 6) ? 'app-fc-weekend' : '',
+                    ].filter(Boolean).join(' ');
+                };
+
                 var calendarEl = document.getElementById('{$id}');
                 window.calendarInstance_{$windowId} = new FullCalendar.Calendar(calendarEl, {
                     headerToolbar: _toolBar,
                     timeZone: 'local',
-                    themeSystem: 'bootstrap5',
+                    colorScheme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
                     eventSources: {$items},
                     selectable: true,
                     fixedWeekCount: false,
@@ -70,7 +88,7 @@ class Calendar extends HtmlComponent
                             duration: { months: 6 }
                         }
                     },
-                    customButtons: {
+                    buttons: {
                         threeMonthView: {
                             text: '3 Months',
                             click: function() {
@@ -82,19 +100,26 @@ class Calendar extends HtmlComponent
                             click: function() {
                                 window.calendarInstance_{$windowId}.changeView('multiMonthSixMonth');
                             }
-                        }
+                        },
+                        today: { text: 'Today' },
+                        dayGridMonth: { text: 'Month' },
+                        timeGridWeek: { text: 'Week' },
+                        timeGridDay: { text: 'Day' }
                     },
-                    buttonText: {
-                        today: 'Today',
-                        month: 'Month',
-                        week: 'Week',
-                        day: 'Day',
-                        list: 'List'
+                    dayCellClass: _dayClass,
+                    dayLaneClass: _dayClass,
+                    slotLaneClass: function (info) {
+                        let hour = info.time.milliseconds / 3600000;
+
+                        return (hour < 7 || hour >= 22) ? 'app-fc-off-hours' : '';
                     },
+                    eventTitleClass: 'app-fc-event-title',
+                    popoverClass: 'app-fc-popover',
+                    singleMonthHeaderClass: 'app-fc-month-header',
                     firstDay: {$dayOfWeekStart},
                     eventDidMount: function (info) {
                         // manipulating the event title
-                        let titleEl = info.el.getElementsByClassName('fc-event-title')[0];
+                        let titleEl = info.el.getElementsByClassName('app-fc-event-title')[0];
 
                         if (titleEl) {
                             // adding HTML
@@ -134,40 +159,28 @@ class Calendar extends HtmlComponent
                 :root {
                     --app-fc-weekend: var(--bs-gray-800);
                     --app-fc-day-other: var(--bs-black);
-                    --fc-page-bg-color: transparent;
+                }
+                [data-color-scheme=dark] {
+                    --fc-classic-background: transparent !important;
                 }
             }
-            :root {
-                --fc-border-color: var(--bs-border-color) !important;
+            :root, [data-color-scheme] {
+                --fc-classic-border: var(--bs-border-color) !important;
             }
-            .fc-day-other {
+            .app-fc-day-other,
+            .app-fc-day-past {
                 background-color: var(--app-fc-day-other);
             }
-            .fc-day-past {
-                background-color: var(--app-fc-day-other);
-            }
-            .fc-day-past {
-                background-color: var(--app-fc-day-other);
-            }
-            .fc-day-sat, .fc-day-sun {
+            .app-fc-weekend {
                 background-color: var(--app-fc-weekend);
             }
-            .fc-view-harness a {
+            .app-fc,
+            .app-fc a {
                 color: var(--bs-body-color);
             }
-            .fc-view-harness {
-                color: var(--bs-body-color);
-            }
-            .fc .fc-more-popover {
-                background: var(--app-fc-day-other);
-            }
-            .fc .fc-multimonth-singlecol .fc-multimonth-header {
-                background: var(--app-fc-day-other);
-            }
-            .fc-timegrid-slots tr:nth-child(-n + 14) {
-                background: var(--app-fc-day-other);
-            }
-            .fc-timegrid-slots tr:nth-last-child(-n + 4) {
+            .app-fc-popover,
+            .app-fc-month-header,
+            .app-fc-off-hours {
                 background: var(--app-fc-day-other);
             }
         CSS;
@@ -179,6 +192,6 @@ class Calendar extends HtmlComponent
 
         $id = self::$id;
 
-        self::$html = "<div id=\"{$id}\" class=\"w-100 h-100\"></div>";
+        self::$html = "<div id=\"{$id}\" class=\"app-fc w-100 h-100\"></div>";
     }
 }

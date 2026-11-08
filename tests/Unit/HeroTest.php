@@ -26,7 +26,7 @@ class HeroTest extends TestCase
 
         $scripts = Hero::scripts();
 
-        $this->assertContains('//cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js', $scripts);
+        $this->assertContains('//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js', $scripts);
         $this->assertContains('//cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js', $scripts);
     }
 
@@ -39,7 +39,7 @@ class HeroTest extends TestCase
         $scripts = Hero::scripts();
         $js = Hero::js();
 
-        $this->assertContains('//cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js', $scripts);
+        $this->assertContains('//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js', $scripts);
         $this->assertStringContainsString('VANTA.BIRDS', $js);
     }
 
@@ -52,7 +52,7 @@ class HeroTest extends TestCase
         $scripts = Hero::scripts();
         $js = Hero::js();
 
-        $this->assertContains('//cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js', $scripts);
+        $this->assertContains('//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js', $scripts);
         $this->assertStringContainsString('VANTA.FOG', $js);
     }
 
@@ -65,7 +65,7 @@ class HeroTest extends TestCase
         $scripts = Hero::scripts();
 
         $this->assertContains('//cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js', $scripts);
-        $this->assertContains('//cdn.jsdelivr.net/npm/vanta/dist/vanta.trunk.min.js', $scripts);
+        $this->assertContains('//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.trunk.min.js', $scripts);
     }
 
     public function test_p5_effect_topology()
@@ -77,7 +77,7 @@ class HeroTest extends TestCase
         $scripts = Hero::scripts();
 
         $this->assertContains('//cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js', $scripts);
-        $this->assertContains('//cdn.jsdelivr.net/npm/vanta/dist/vanta.topology.min.js', $scripts);
+        $this->assertContains('//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.topology.min.js', $scripts);
     }
 
     public function test_invalid_effect_throws_exception()
@@ -96,7 +96,7 @@ class HeroTest extends TestCase
             $scripts = Hero::scripts();
 
             $this->assertContains(
-                '//cdn.jsdelivr.net/npm/vanta/dist/vanta.'.$effect.'.min.js',
+                '//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.'.$effect.'.min.js',
                 $scripts,
                 "Script for effect [{$effect}] not found"
             );
@@ -180,6 +180,6 @@ class HeroTest extends TestCase
 
         $scripts = Hero::scripts();
 
-        $this->assertContains('//cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js', $scripts);
+        $this->assertContains('//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js', $scripts);
     }
 }

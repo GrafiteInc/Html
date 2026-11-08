@@ -50,7 +50,7 @@ class Parallax extends HtmlComponent
     public static function scripts()
     {
         return [
-            '//cdn.jsdelivr.net/npm/simple-parallax-js@6.3.3/dist/vanilla/simpleParallaxVanilla.umd.min.js',
+            '//cdn.jsdelivr.net/npm/simple-parallax-js@7.0.0/dist/vanilla/simpleParallaxVanilla.umd.js',
         ];
     }
 
@@ -58,8 +58,8 @@ class Parallax extends HtmlComponent
     {
         $id = self::$id;
         $config = json_encode([
-            'scale' => self::$scale ?? '1.2',
-            'delay' => self::$delay ?? '0.4',
+            'scale' => (float) (self::$scale ?? 1.2),
+            'delay' => (float) (self::$delay ?? 0.4),
             'orientation' => self::$orientation ?? 'up',
         ]);
 

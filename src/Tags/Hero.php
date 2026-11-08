@@ -179,7 +179,7 @@ class Hero extends HtmlComponent
             $scripts[] = '//cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
         }
 
-        $scripts[] = '//cdn.jsdelivr.net/npm/vanta/dist/vanta.'.$effect.'.min.js';
+        $scripts[] = '//cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.'.$effect.'.min.js';
 
         return $scripts;
     }
